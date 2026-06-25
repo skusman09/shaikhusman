@@ -7,6 +7,7 @@ import { Paragraph } from '@/components/ui/Paragraph';
 import { Card } from '@/components/ui/Card';
 import { Hero } from '@/components/hero/Hero';
 import { ExpandableCard } from '@/components/ui/ExpandableCard';
+import { PlatformEvolutionDiagram } from '@/components/experience/PlatformEvolutionDiagram';
 import { 
   experience, 
   experienceSection, 
@@ -81,20 +82,23 @@ import {
         </div>
 
         <div class="flex flex-col gap-10">
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-4">
             <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.platformEvolutionHeading}</Heading>
             <Paragraph muted className="max-w-2xl leading-relaxed">
-              One backend architecture built for healthcare, then extended with domain-specific modules to power three additional products — without rebuilding from scratch.
+              MDPlix became the foundation for multiple business products. Instead of rebuilding each application, the same backend platform was extended with domain-specific modules for different business domains.
             </Paragraph>
           </div>
+          
           <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-surface to-background border border-border/50 p-1 shadow-2xl shadow-accent/5">
             <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]" />
-            <div class="relative bg-background/40 backdrop-blur-sm rounded-xl p-8 md:p-12 min-h-[400px] flex items-center justify-center border border-white/[0.05]">
-              <div class="text-center text-muted">
-                <pre class="font-mono text-sm leading-[1.8] text-left inline-block text-primary/80">{experienceSection.platformEvolutionPlaceholder}</pre>
-              </div>
+            <div class="relative bg-background/40 backdrop-blur-sm rounded-xl p-6 md:p-10 lg:p-12 border border-white/[0.05]">
+              <PlatformEvolutionDiagram />
             </div>
           </div>
+
+          <Paragraph size="sm" muted className="max-w-3xl leading-relaxed text-center mx-auto -mt-2">
+            I contributed to building the original backend foundation and later extended the same architecture across multiple business products by implementing reusable services and domain-specific modules.
+          </Paragraph>
         </div>
 
         {/* PROFESSIONAL EXPERIENCE CARDS: Product Engineering */}
