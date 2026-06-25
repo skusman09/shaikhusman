@@ -1,11 +1,12 @@
 import { cn } from '@/lib/cn';
-import { MapPin, Briefcase, Calendar } from 'lucide-react';
+import { MapPin, Briefcase, Calendar, Server } from 'lucide-react';
 import { hero } from '@/content';
 
 const iconMap: Record<string, React.ReactNode> = {
   Briefcase: <Briefcase className="w-4 h-4" />,
   Calendar: <Calendar className="w-4 h-4" />,
   MapPin: <MapPin className="w-4 h-4" />,
+  Server: <Server className="w-4 h-4" />,
 };
 
 export function HeroQuickInfo({ className }: { className?: string }) {

@@ -1,6 +1,7 @@
 export interface HeroContent {
   name: string;
   role: string;
+  tagline: string;
   introduction: string;
   statusBadge: string;
   imageAlt: string;

@@ -5,18 +5,6 @@
   --font-heading: "Geist Sans", system-ui, sans-serif;
   --font-body: "Inter Variable", system-ui, sans-serif;
 
-  /* Spacing */
-  --spacing-4xs: 0.125rem;
-  --spacing-3xs: 0.25rem;
-  --spacing-2xs: 0.5rem;
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  --spacing-3xl: 6rem;
-  
   /* Radii */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;

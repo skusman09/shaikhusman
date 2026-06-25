@@ -2,8 +2,13 @@ import type { SocialLink } from '@/types/portfolio';
 
 export const social: SocialLink[] = [
   {
-    platform: '[Platform Placeholder]',
-    url: '#[url-placeholder]',
-    icon: '[IconName]',
+    platform: 'GitHub',
+    url: 'https://github.com/skusman09',
+    icon: 'Github',
+  },
+  {
+    platform: 'LinkedIn',
+    url: 'https://linkedin.com/in/shaikh-mohammed-usman',
+    icon: 'Linkedin',
   },
 ];

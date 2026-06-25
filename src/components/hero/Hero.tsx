@@ -36,23 +36,28 @@ export function Hero({ className }: { className?: string }) {
           </div>
 
           {/* TEXT SECTION (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="order-2 lg:order-1 flex flex-col gap-6 lg:max-w-2xl">
-            <div className="flex flex-col gap-2">
-              <Heading as="h1" size="4xl" className="tracking-tight leading-[1.1]">
+          <div className="order-2 lg:order-1 flex flex-col gap-8 lg:max-w-2xl xl:max-w-3xl">
+            <div className="flex flex-col gap-3">
+              <Heading as="h1" size="5xl" className="tracking-tighter leading-[1.1]">
                 {hero.name}
               </Heading>
-              <Heading as="h2" size="2xl" className="text-primary/70 font-normal">
+              <Heading as="h2" size="2xl" className="text-primary/70 font-light tracking-tight">
                 {hero.role}
               </Heading>
             </div>
 
-            <Paragraph size="lg" className="text-muted leading-relaxed max-w-xl">
-              {hero.introduction}
-            </Paragraph>
+            <div className="space-y-4">
+              <Heading as="h3" size="xl" className="font-medium text-primary leading-snug max-w-xl">
+                {hero.tagline}
+              </Heading>
+              <Paragraph size="lg" className="text-muted leading-relaxed max-w-2xl">
+                {hero.introduction}
+              </Paragraph>
+            </div>
 
             <HeroActions />
 
-            <div className="mt-4 lg:mt-8 pt-8 border-t border-border/40">
+            <div className="mt-4 lg:mt-6 pt-8 border-t border-border/40">
               <HeroQuickInfo />
             </div>
           </div>

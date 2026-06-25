@@ -1,36 +1,40 @@
 import React from 'react';
 import { cn } from '@/lib/cn';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost';
-  size?: 'sm' | 'md' | 'lg' | 'icon';
-  asChild?: boolean;
-}
+const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer';
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => {
-    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50';
-    
-    const variants = {
-      primary: 'bg-accent text-white hover:bg-accent/90',
-      secondary: 'border border-border bg-transparent hover:bg-surface text-primary',
-      ghost: 'hover:bg-surface text-primary',
-    };
+const variants = {
+  primary: 'bg-accent text-white hover:bg-accent/90',
+  secondary: 'border border-border bg-transparent hover:bg-surface text-primary',
+  ghost: 'hover:bg-surface text-primary',
+};
 
-    const sizes = {
-      sm: 'h-8 px-3 text-sm',
-      md: 'h-10 px-4 py-2',
-      lg: 'h-12 px-8 text-lg',
-      icon: 'h-10 w-10',
-    };
+const sizes = {
+  sm: 'h-8 px-3 text-sm',
+  md: 'h-10 px-4 py-2',
+  lg: 'h-11 px-6 text-base',
+  icon: 'h-10 w-10',
+};
 
-    return (
-      <button
-        ref={ref}
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
-        {...props}
-      />
-    );
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
+
+type SharedButtonProps = {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  className?: string;
+  children?: React.ReactNode;
+};
+
+export type ButtonProps =
+  | (SharedButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement> & { as?: 'button' })
+  | (SharedButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement> & { as: 'a' });
+
+export function Button({ variant = 'primary', size = 'md', className, as: Tag = 'button', ...props }: ButtonProps) {
+  const combinedClass = cn(baseStyles, variants[variant], sizes[size], className);
+  if (Tag === 'a') {
+    return <a className={combinedClass} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)} />;
   }
-);
+  return <button className={combinedClass} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)} />;
+}
 Button.displayName = 'Button';
