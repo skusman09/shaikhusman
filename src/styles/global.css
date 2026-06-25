@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-heading: "Geist Sans", system-ui, sans-serif;
+  --font-body: "Inter Variable", system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-4xs: 0.125rem;
+  --spacing-3xs: 0.25rem;
+  --spacing-2xs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Colors defined in custom properties for theming */
+  --color-bg: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+}
+
+@layer base {
+  :root {
+    /* Light Theme Palette */
+    --color-background: #FAFAFA;
+    --color-surface: #FFFFFF;
+    --color-border: #E4E4E7;
+    --color-primary: #18181B;
+    --color-secondary: #52525B;
+    --color-accent: #2563EB;
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+  }
+
+  [data-theme='dark'] {
+    /* Dark Theme Palette */
+    --color-background: #0A0A0A;
+    --color-surface: #111111;
+    --color-border: #262626;
+    --color-primary: #FAFAFA;
+    --color-secondary: #A1A1AA;
+    --color-accent: #2563EB;
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg text-primary font-body;
+  }
+
+  /* Focus rings for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-primary;
+  }
+}

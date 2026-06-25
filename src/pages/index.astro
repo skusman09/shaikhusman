@@ -1,0 +1,117 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Section } from '@/components/ui/Section';
+import { Container } from '@/components/ui/Container';
+import { Heading } from '@/components/ui/Heading';
+import { Paragraph } from '@/components/ui/Paragraph';
+---
+
+<PageLayout>
+  
+  {/* HERO SECTION */}
+  <Section id="hero" className="min-h-[80vh] flex items-center pt-24 md:pt-32">
+    <Container>
+      <div class="flex flex-col gap-6 max-w-3xl">
+        <div class="h-12 w-48 bg-border/20 rounded animate-pulse" />
+        <div class="h-20 w-full bg-border/20 rounded animate-pulse" />
+        <div class="h-16 w-3/4 bg-border/20 rounded animate-pulse" />
+        <div class="flex gap-4 mt-4">
+          <div class="h-10 w-32 bg-border/20 rounded animate-pulse" />
+          <div class="h-10 w-32 bg-border/20 rounded animate-pulse" />
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  {/* PROFESSIONAL EXPERIENCE SECTION */}
+  <Section id="experience" className="bg-surface/30 border-y border-border/40">
+    <Container>
+      <Heading as="h2" size="3xl" className="mb-4">Professional Experience</Heading>
+      <Paragraph size="lg" muted className="mb-16 max-w-2xl">
+        The evolution from product design to platform architecture, powering multiple domains from a shared foundation.
+      </Paragraph>
+
+      <div class="flex flex-col gap-24">
+        {/* Platform Evolution & Philosophy Placeholder */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="xl">Platform Evolution</Heading>
+          <div class="h-64 w-full bg-border/20 rounded border border-border/50 flex items-center justify-center text-muted">
+            [Architecture Diagram Placeholder]
+          </div>
+        </div>
+
+        {/* Product Engineering Placeholder */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="xl">Product Engineering</Heading>
+          <div class="grid gap-6 sm:grid-cols-2">
+            {[1, 2, 3, 4].map(() => (
+              <div class="h-48 bg-border/20 rounded border border-border/50" />
+            ))}
+          </div>
+        </div>
+
+        {/* Enterprise Consulting Placeholder */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="xl">Enterprise Consulting</Heading>
+          <div class="h-40 w-full bg-border/20 rounded border border-border/50" />
+        </div>
+
+        {/* Internal Engineering Placeholder */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="xl">Internal Engineering</Heading>
+          <div class="grid gap-6 sm:grid-cols-3">
+            {[1, 2, 3].map(() => (
+              <div class="h-40 bg-border/20 rounded border border-border/50" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  {/* PERSONAL PROJECTS SECTION */}
+  <Section id="projects">
+    <Container>
+      <Heading as="h2" size="3xl" className="mb-4">Personal Projects</Heading>
+      <Paragraph size="lg" muted className="mb-16 max-w-2xl">
+        Independent exploration in cloud infrastructure, deployment, and engineering patterns.
+      </Paragraph>
+
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="h-72 bg-border/20 rounded border border-border/50" />
+        <div class="h-72 bg-border/20 rounded border border-border/50" />
+      </div>
+    </Container>
+  </Section>
+
+  {/* TECH / ENGINEERING STACK & PRACTICES SECTION */}
+  <Section id="tech" className="bg-surface/30 border-t border-border/40">
+    <Container>
+      <div class="grid gap-16 lg:grid-cols-2">
+        {/* Engineering Stack */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h2" size="3xl">Engineering Stack</Heading>
+          <div class="flex flex-col gap-6">
+            {[1, 2, 3, 4, 5, 6, 7].map(() => (
+              <div class="flex gap-4 items-center">
+                <div class="h-6 w-32 bg-border/20 rounded" />
+                <div class="h-6 flex-1 bg-border/10 rounded" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Engineering Practices */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h2" size="3xl">Engineering Practices</Heading>
+          <div class="grid grid-cols-2 gap-4">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
+              <div class="h-16 bg-border/20 rounded border border-border/50" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+</PageLayout>
