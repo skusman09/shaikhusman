@@ -27,17 +27,12 @@ export function Hero({ className }: { className?: string }) {
           <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm md:max-w-md lg:max-w-lg">
               <HeroImage />
-              
-              {/* Badge positioned overlapping the image */}
-              <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 z-10">
-                <HeroBadge />
-              </div>
             </div>
           </div>
 
           {/* TEXT SECTION (Order 2 on mobile, Order 1 on desktop) */}
           <div className="order-2 lg:order-1 flex flex-col gap-8 lg:max-w-2xl xl:max-w-3xl">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <Heading as="h1" size="5xl" className="tracking-tighter leading-[1.1]">
                 {hero.name}
               </Heading>
@@ -56,6 +51,10 @@ export function Hero({ className }: { className?: string }) {
             </div>
 
             <HeroActions />
+
+            <div className="flex pt-2">
+              <HeroBadge />
+            </div>
 
             <div className="mt-4 lg:mt-6 pt-8 border-t border-border/40">
               <HeroQuickInfo />

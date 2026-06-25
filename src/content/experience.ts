@@ -4,10 +4,10 @@ export const experienceSection = {
   title: 'Professional Experience',
   description: 'Since April 2024, I have operated as a core Backend Software Engineer at Suflon Tech LLP. My experience spans building reusable multi-tenant platforms, delivering enterprise consulting solutions, and creating internal automation tools—all unified by a focus on scalable architecture and engineering excellence.',
   platformEvolutionHeading: 'Platform Evolution',
-  platformEvolutionPlaceholder: `                   MDPlix
+  platformEvolutionPlaceholder: `                    MDPlix
                       │
                       │
-      Reusable Backend Platform
+          Reusable Backend Platform
                       │
       ┌───────────────┼───────────────┐
       │               │               │
@@ -26,6 +26,21 @@ export const experience: ExperienceItem[] = [
     category: 'Product Engineering',
     description: 'Architected and developed the backend foundation for a healthcare platform. Designed the REST APIs, database schema, and background job systems that later became the core architecture for multiple subsequent business products.',
     technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Multi-tenant', 'Background Jobs'],
+    businessContext: 'The healthcare sector needed a compliant, high-throughput platform to manage patient records and scheduling across multiple clinics securely.',
+    responsibilities: [
+      'Architected the entire backend foundation from scratch.',
+      'Designed a multi-tenant PostgreSQL schema ensuring strict data isolation.',
+      'Implemented robust background job processing using Redis and Celery for report generation.',
+    ],
+    architecture: 'A monolithic FastAPI application structured with domain-driven design, utilizing PostgreSQL for persistence and Redis for caching and async task queues.',
+    engineeringDecisions: [
+      'Chose FastAPI over Django for raw asynchronous performance and automatic OpenAPI documentation.',
+      'Implemented Row-Level Security (RLS) in PostgreSQL for bulletproof multi-tenancy.',
+    ],
+    keyLearnings: [
+      'Deepened understanding of HIPAA-compliant data modeling constraints.',
+      'Mastered FastAPI dependency injection for scalable codebase structure.',
+    ]
   },
   {
     id: 'urbanhouzz',
@@ -35,6 +50,15 @@ export const experience: ExperienceItem[] = [
     category: 'Product Engineering',
     description: 'Adapted the core backend architecture to support real estate workflows. Introduced property management modules, spatial queries, and customer lifecycle automation while maintaining platform consistency.',
     technologies: ['Reusable Architecture', 'Real Estate Modules', 'Data Modeling'],
+    businessContext: 'A growing real estate agency required a custom platform to manage listings, agent assignments, and client lifecycles efficiently.',
+    responsibilities: [
+      'Adapted the existing MDPlix architecture to fit real estate domain models.',
+      'Implemented PostGIS spatial queries for radius-based property searches.',
+    ],
+    architecture: 'Extended the core FastAPI monolith with a modular plugin architecture to selectively enable real-estate features.',
+    engineeringDecisions: [
+      'Adopted PostGIS extension instead of relying on external location services to reduce latency.',
+    ],
   },
   {
     id: 'azentikforce',

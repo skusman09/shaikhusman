@@ -45,6 +45,11 @@ export interface ExperienceItem {
   category: ExperienceCategory;
   description: string;
   technologies: string[];
+  businessContext?: string;
+  responsibilities?: string[];
+  architecture?: string;
+  engineeringDecisions?: string[];
+  keyLearnings?: string[];
 }
 
 export interface Project {
@@ -54,6 +59,11 @@ export interface Project {
   link?: string;
   github?: string;
   technologies: string[];
+  businessContext?: string;
+  responsibilities?: string[];
+  architecture?: string;
+  engineeringDecisions?: string[];
+  keyLearnings?: string[];
 }
 
 export type TechCategory = 

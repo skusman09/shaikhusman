@@ -12,13 +12,16 @@ const iconMap: Record<string, React.ReactNode> = {
 export function HeroQuickInfo({ className }: { className?: string }) {
 
   return (
-    <ul className={cn("flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8", className)}>
+    <div className={cn("grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-2", className)}>
       {hero.quickInfo.map((item, i) => (
-        <li key={i} className="flex items-center gap-2 text-sm text-muted">
-          <span className="text-primary/50">{iconMap[item.icon] || null}</span>
-          <span>{item.label}</span>
-        </li>
+        <div key={i} className="flex flex-col gap-3 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/40 transition-colors">
+          <div className="flex items-center gap-2 text-accent">
+            {iconMap[item.icon] || null}
+            <span className="text-xs font-bold uppercase tracking-wider">{item.icon === 'Briefcase' ? 'Experience' : item.icon === 'MapPin' ? 'Location' : 'Focus'}</span>
+          </div>
+          <span className="text-sm font-medium text-primary leading-relaxed">{item.label}</span>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
