@@ -7,6 +7,7 @@ import { HeroBadge } from './HeroBadge';
 import { HeroImage } from './HeroImage';
 import { HeroActions } from './HeroActions';
 import { HeroQuickInfo } from './HeroQuickInfo';
+import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
   return (
@@ -38,15 +39,15 @@ export function Hero({ className }: { className?: string }) {
           <div className="order-2 lg:order-1 flex flex-col gap-6 lg:max-w-2xl">
             <div className="flex flex-col gap-2">
               <Heading as="h1" size="4xl" className="tracking-tight leading-[1.1]">
-                [NAME PLACEHOLDER]
+                {hero.name}
               </Heading>
               <Heading as="h2" size="2xl" className="text-primary/70 font-normal">
-                [ROLE PLACEHOLDER]
+                {hero.role}
               </Heading>
             </div>
 
             <Paragraph size="lg" className="text-muted leading-relaxed max-w-xl">
-              [INTRODUCTION PLACEHOLDER]
+              {hero.introduction}
             </Paragraph>
 
             <HeroActions />

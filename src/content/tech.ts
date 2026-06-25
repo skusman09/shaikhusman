@@ -1,5 +1,9 @@
 import type { TechGroup } from '@/types/portfolio';
 
+export const techSection = {
+  title: 'Engineering Stack',
+};
+
 export const tech: TechGroup[] = [
   {
     category: 'Backend',

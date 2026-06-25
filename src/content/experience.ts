@@ -1,5 +1,15 @@
 import type { ExperienceItem } from '@/types/portfolio';
 
+export const experienceSection = {
+  title: 'Professional Experience',
+  description: '[Placeholder: The narrative of transitioning from product design to platform architecture, powering multiple domains from a shared foundation.]',
+  platformEvolutionHeading: 'Platform Evolution',
+  platformEvolutionPlaceholder: '[Architecture Diagram Placeholder: MDPlix → Reusable Platform → Products]',
+  productEngineeringHeading: 'Product Engineering',
+  enterpriseConsultingHeading: 'Enterprise Consulting',
+  internalEngineeringHeading: 'Internal Engineering',
+};
+
 export const experience: ExperienceItem[] = [
   {
     id: 'mdplix',

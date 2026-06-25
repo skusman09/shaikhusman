@@ -1,21 +1,24 @@
 import type { HeroContent } from '@/types/portfolio';
 
 export const hero: HeroContent = {
-  name: '[Placeholder Name]',
-  role: '[Placeholder Role]',
-  introduction: '[Placeholder Introduction paragraph describing your high-level focus and philosophy. Do not write a biography.]',
+  name: '[NAME PLACEHOLDER]',
+  role: '[ROLE PLACEHOLDER]',
+  introduction: '[INTRODUCTION PLACEHOLDER]',
+  statusBadge: '[STATUS PLACEHOLDER]',
+  imageAlt: '[PROFILE PHOTO PLACEHOLDER]',
   cta: {
     primary: {
-      label: '[Primary Action]',
-      href: '#[primary-link]',
+      label: '[DOWNLOAD RESUME]',
+      href: '#',
     },
     secondary: {
-      label: '[Secondary Action]',
-      href: '#[secondary-link]',
+      label: '[CONTACT]',
+      href: '#',
     },
   },
   quickInfo: [
-    '[Placeholder Info 1]',
-    '[Placeholder Info 2]',
+    { icon: 'Briefcase', label: '[CURRENT ROLE PLACEHOLDER]' },
+    { icon: 'Calendar', label: '[EXPERIENCE PLACEHOLDER]' },
+    { icon: 'MapPin', label: '[LOCATION PLACEHOLDER]' },
   ],
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { navigation } from '@/content';
+import { navigation, resume, logo } from '@/content';
 import { Container } from './ui/Container';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/Button';
@@ -51,7 +51,7 @@ export function Navbar() {
             className="flex items-center gap-2 font-geist text-xl font-bold tracking-tight text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
             aria-label="Home"
           >
-            SU.
+            {logo}
           </a>
 
           {/* Desktop Navigation */}
@@ -78,7 +78,7 @@ export function Navbar() {
             <ThemeToggle />
             <div className="hidden md:block">
               <Button variant="secondary" size="sm">
-                Resume
+                {resume.label}
               </Button>
             </div>
 
@@ -116,7 +116,7 @@ export function Navbar() {
             </a>
           ))}
           <Button variant="secondary" size="lg" className="mt-4 w-full max-w-[200px]">
-            Resume
+            {resume.label}
           </Button>
         </nav>
       </div>

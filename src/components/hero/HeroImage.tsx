@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn';
+import { hero } from '@/content';
 
 export function HeroImage({ className }: { className?: string }) {
   return (
@@ -11,7 +12,7 @@ export function HeroImage({ className }: { className?: string }) {
         {/* Actual Placeholder Content */}
         <div className="text-center text-muted">
           <span className="block text-4xl mb-4">📸</span>
-          <span className="text-sm font-medium tracking-wide">[PROFILE PHOTO PLACEHOLDER]</span>
+          <span className="text-sm font-medium tracking-wide">{hero.imageAlt}</span>
         </div>
       </div>
     </div>

@@ -2,6 +2,8 @@ export interface HeroContent {
   name: string;
   role: string;
   introduction: string;
+  statusBadge: string;
+  imageAlt: string;
   cta: {
     primary: {
       label: string;
@@ -12,7 +14,10 @@ export interface HeroContent {
       href: string;
     };
   };
-  quickInfo: string[];
+  quickInfo: {
+    icon: string;
+    label: string;
+  }[];
 }
 
 export interface JourneyMilestone {
@@ -83,6 +88,7 @@ export interface ContactInfo {
 }
 
 export interface ResumeInfo {
+  label: string;
   url: string;
   lastUpdated: string;
 }

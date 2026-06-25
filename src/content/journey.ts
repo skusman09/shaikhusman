@@ -1,5 +1,9 @@
 import type { JourneyPhase } from '@/types/portfolio';
 
+export const journeySection = {
+  title: 'Engineering Journey',
+};
+
 export const journey: JourneyPhase[] = [
   {
     title: '[Phase Title Placeholder]',

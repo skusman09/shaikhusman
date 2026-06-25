@@ -1,5 +1,9 @@
 import type { Practice } from '@/types/portfolio';
 
+export const practicesSection = {
+  title: 'Engineering Practices',
+};
+
 export const practices: Practice[] = [
   {
     id: 'api-design',

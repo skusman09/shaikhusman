@@ -6,6 +6,18 @@ import { Heading } from '@/components/ui/Heading';
 import { Paragraph } from '@/components/ui/Paragraph';
 import { Card } from '@/components/ui/Card';
 import { Hero } from '@/components/hero/Hero';
+import { 
+  experience, 
+  experienceSection, 
+  journey, 
+  journeySection, 
+  projects, 
+  projectsSection, 
+  tech, 
+  techSection, 
+  practices, 
+  practicesSection 
+} from '@/content';
 ---
 
 <PageLayout>
@@ -16,19 +28,19 @@ import { Hero } from '@/components/hero/Hero';
   {/* PROFESSIONAL EXPERIENCE SECTION */}
   <Section id="experience" className="bg-surface/30 border-y border-border/40 py-24 md:py-32">
     <Container>
-      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">Professional Experience</Heading>
+      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">{experienceSection.title}</Heading>
       <Paragraph size="lg" muted className="mb-20 max-w-3xl leading-relaxed">
-        [Placeholder: The narrative of transitioning from product design to platform architecture, powering multiple domains from a shared foundation.]
+        {experienceSection.description}
       </Paragraph>
 
       <div class="flex flex-col gap-32">
         
         {/* TIMELINE LAYOUT: Engineering Journey */}
         <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">Engineering Journey</Heading>
+          <Heading as="h3" size="2xl" className="tracking-tight">{journeySection.title}</Heading>
           <div class="relative pl-8 md:pl-0 border-l md:border-l-0 border-border/50">
             {/* Timeline Placeholder Items */}
-            {[1, 2].map(() => (
+            {journey.map(() => (
               <div class="mb-12 md:flex md:gap-8 last:mb-0 relative">
                 {/* Timeline Node */}
                 <div class="absolute left-[-37px] md:static md:w-48 flex-shrink-0 pt-1">
@@ -49,20 +61,20 @@ import { Hero } from '@/components/hero/Hero';
 
         {/* ARCHITECTURE DIAGRAM CONTAINER: Platform Evolution */}
         <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">Platform Evolution</Heading>
+          <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.platformEvolutionHeading}</Heading>
           <Card className="p-8 md:p-12 min-h-[400px] flex items-center justify-center bg-background/50 border-dashed">
             <div class="text-center text-muted">
               <span class="block mb-4 text-4xl">🏗️</span>
-              [Architecture Diagram Placeholder: MDPlix → Reusable Platform → Products]
+              {experienceSection.platformEvolutionPlaceholder}
             </div>
           </Card>
         </div>
 
         {/* PROFESSIONAL EXPERIENCE CARDS: Product Engineering */}
         <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">Product Engineering</Heading>
+          <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.productEngineeringHeading}</Heading>
           <div class="grid gap-8 md:grid-cols-2">
-            {[1, 2, 3, 4].map(() => (
+            {experience.filter(e => e.category === 'Product Engineering').map(() => (
               <Card hoverable className="p-6 md:p-8 flex flex-col h-full">
                 <div class="flex justify-between items-start mb-6">
                   <div class="h-10 w-32 bg-border/20 rounded" />
@@ -84,25 +96,27 @@ import { Hero } from '@/components/hero/Hero';
 
         {/* PROJECT CARD: Enterprise Consulting */}
         <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">Enterprise Consulting</Heading>
-          <Card hoverable className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
-            <div class="flex-1 w-full space-y-6">
-              <div class="h-10 w-48 bg-border/20 rounded" />
-              <div class="space-y-3">
-                <div class="h-4 w-full bg-border/10 rounded" />
-                <div class="h-4 w-full bg-border/10 rounded" />
-                <div class="h-4 w-2/3 bg-border/10 rounded" />
+          <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.enterpriseConsultingHeading}</Heading>
+          {experience.filter(e => e.category === 'Enterprise Consulting').map(() => (
+            <Card hoverable className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
+              <div class="flex-1 w-full space-y-6">
+                <div class="h-10 w-48 bg-border/20 rounded" />
+                <div class="space-y-3">
+                  <div class="h-4 w-full bg-border/10 rounded" />
+                  <div class="h-4 w-full bg-border/10 rounded" />
+                  <div class="h-4 w-2/3 bg-border/10 rounded" />
+                </div>
               </div>
-            </div>
-            <div class="w-full md:w-1/3 h-48 bg-border/20 rounded-lg flex-shrink-0" />
-          </Card>
+              <div class="w-full md:w-1/3 h-48 bg-border/20 rounded-lg flex-shrink-0" />
+            </Card>
+          ))}
         </div>
 
         {/* INTERNAL TOOL CARDS: Internal Engineering */}
         <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">Internal Engineering</Heading>
+          <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.internalEngineeringHeading}</Heading>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map(() => (
+            {experience.filter(e => e.category === 'Internal Engineering').map(() => (
               <Card hoverable className="p-6">
                 <div class="h-12 w-12 bg-border/20 rounded-lg mb-6" />
                 <div class="h-6 w-3/4 bg-border/20 rounded mb-4" />
@@ -119,13 +133,13 @@ import { Hero } from '@/components/hero/Hero';
   {/* PERSONAL PROJECTS SECTION */}
   <Section id="projects" className="py-24 md:py-32">
     <Container>
-      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">Personal Projects</Heading>
+      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">{projectsSection.title}</Heading>
       <Paragraph size="lg" muted className="mb-20 max-w-3xl leading-relaxed">
-        [Placeholder: Independent exploration in cloud infrastructure, deployment, and engineering patterns.]
+        {projectsSection.description}
       </Paragraph>
 
       <div class="grid gap-12 lg:grid-cols-2">
-        {[1, 2].map(() => (
+        {projects.map(() => (
           <Card hoverable className="overflow-hidden flex flex-col">
             <div class="h-64 bg-border/20 w-full" />
             <div class="p-8 flex flex-col flex-1">
@@ -152,15 +166,15 @@ import { Hero } from '@/components/hero/Hero';
         
         {/* TECHNOLOGY GRID: Engineering Stack */}
         <div class="flex flex-col gap-10">
-          <Heading as="h2" size="3xl" className="tracking-tight">Engineering Stack</Heading>
+          <Heading as="h2" size="3xl" className="tracking-tight">{techSection.title}</Heading>
           <div class="flex flex-col gap-8">
-            {[1, 2, 3, 4, 5].map(() => (
+            {tech.map((group) => (
               <div class="flex flex-col md:flex-row gap-4 md:items-start">
                 <div class="w-40 flex-shrink-0">
                   <div class="h-6 w-24 bg-border/20 rounded" />
                 </div>
                 <div class="flex flex-wrap gap-2 flex-1">
-                  {[1, 2, 3, 4].map(() => (
+                  {group.items.map(() => (
                     <div class="h-8 w-20 bg-border/10 rounded-full" />
                   ))}
                 </div>
@@ -171,9 +185,9 @@ import { Hero } from '@/components/hero/Hero';
 
         {/* LIST/GRID: Engineering Practices */}
         <div class="flex flex-col gap-10">
-          <Heading as="h2" size="3xl" className="tracking-tight">Engineering Practices</Heading>
+          <Heading as="h2" size="3xl" className="tracking-tight">{practicesSection.title}</Heading>
           <div class="grid sm:grid-cols-2 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map(() => (
+            {practices.map(() => (
               <div class="flex items-center gap-4">
                 <div class="h-10 w-10 bg-border/20 rounded flex-shrink-0" />
                 <div class="flex flex-col gap-2 flex-1">

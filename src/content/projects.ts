@@ -1,5 +1,10 @@
 import type { Project } from '@/types/portfolio';
 
+export const projectsSection = {
+  title: 'Personal Projects',
+  description: '[Placeholder: Independent exploration in cloud infrastructure, deployment, and engineering patterns.]',
+};
+
 export const projects: Project[] = [
   {
     id: 'staffone',
