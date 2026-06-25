@@ -3,10 +3,8 @@ import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Heading } from '@/components/ui/Heading';
 import { Paragraph } from '@/components/ui/Paragraph';
-import { HeroBadge } from './HeroBadge';
 import { HeroImage } from './HeroImage';
 import { HeroActions } from './HeroActions';
-import { HeroQuickInfo } from './HeroQuickInfo';
 import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
@@ -53,12 +51,12 @@ export function Hero({ className }: { className?: string }) {
 
             <HeroActions />
 
-            <div className="flex pt-2">
-              <HeroBadge />
-            </div>
-
-            <div className="mt-4 lg:mt-6 pt-8 border-t border-border/40">
-              <HeroQuickInfo />
+            <div className="pt-4 flex items-center gap-2.5 text-sm font-medium text-muted">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Available for Backend Software Engineer opportunities.</span>
             </div>
           </div>
 

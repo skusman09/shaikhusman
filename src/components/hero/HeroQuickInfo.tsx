@@ -4,33 +4,26 @@ import { hero } from '@/content';
 import type { JSX } from 'react';
 
 const iconMap: Record<string, JSX.Element> = {
-  Briefcase: <Briefcase className="w-4 h-4" />,
-  MapPin: <MapPin className="w-4 h-4" />,
-  Server: <Server className="w-4 h-4" />,
-};
-
-const labelMap: Record<string, string> = {
-  Briefcase: 'Experience',
-  MapPin: 'Location',
-  Server: 'Focus',
+  Briefcase: <Briefcase className="w-3.5 h-3.5 flex-shrink-0" />,
+  MapPin:    <MapPin    className="w-3.5 h-3.5 flex-shrink-0" />,
+  Server:    <Server    className="w-3.5 h-3.5 flex-shrink-0" />,
 };
 
 export function HeroQuickInfo({ className }: { className?: string }) {
   return (
-    <div className={cn('grid grid-cols-1 sm:grid-cols-3 gap-4 w-full', className)}>
+    <div className={cn('flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-6', className)}>
       {hero.quickInfo.map((item, i) => (
-        <div
+        <span
           key={i}
-          className="flex flex-col gap-2.5 p-5 rounded-2xl border border-border/40 bg-surface/20 hover:bg-surface/40 transition-colors duration-150"
+          className="flex items-center gap-2 text-sm text-muted"
         >
-          <div className="flex items-center gap-2 text-accent">
-            {iconMap[item.icon] ?? null}
-            <span className="text-xs font-bold uppercase tracking-widest">
-              {labelMap[item.icon] ?? item.icon}
-            </span>
-          </div>
-          <span className="text-sm font-medium text-primary leading-snug">{item.label}</span>
-        </div>
+          <span className="text-accent/60">{iconMap[item.icon] ?? null}</span>
+          <span className="leading-none">{item.label}</span>
+          {/* Divider — only between items, hidden on mobile stack */}
+          {i < hero.quickInfo.length - 1 && (
+            <span className="hidden sm:inline-block w-px h-3 bg-border/60 ml-2" />
+          )}
+        </span>
       ))}
     </div>
   );
