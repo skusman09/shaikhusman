@@ -3,7 +3,8 @@ import { cn } from '@/lib/cn';
 import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
 import type { ExperienceItem, Project } from '@/types/portfolio';
-import { ChevronDown, ExternalLink, GitBranch } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+import { GithubIcon } from '@/components/ui/BrandIcons';
 
 interface ExpandableCardProps {
   item: Partial<ExperienceItem & Project>;
@@ -222,7 +223,7 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
                 <a href={item.github} target="_blank" rel="noopener noreferrer"
                   className="text-muted hover:text-primary transition-colors duration-150"
                   aria-label="GitHub Repository">
-                  <GitBranch className="w-4 h-4" />
+                  <GithubIcon className="w-[18px] h-[18px]" />
                 </a>
               )}
             </div>

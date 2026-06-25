@@ -1,5 +1,6 @@
 import { cn } from '@/lib/cn';
-import { Download, GitBranch, Link } from 'lucide-react';
+import { Download } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 import { hero } from '@/content';
 
 const btnBase = 'inline-flex items-center gap-2 rounded-md font-medium transition-colors focus-visible:outline-none cursor-pointer';
@@ -26,7 +27,7 @@ export function HeroActions({ className }: { className?: string }) {
           className={cn(btnBase, 'h-11 w-11 justify-center border border-border bg-surface hover:bg-surface/80 text-primary shadow-sm')}
           aria-label="View GitHub"
         >
-          <GitBranch className="w-5 h-5" />
+          <GithubIcon className="w-[22px] h-[22px]" />
         </a>
 
         {/* Secondary CTA — LinkedIn */}
@@ -37,7 +38,7 @@ export function HeroActions({ className }: { className?: string }) {
           className={cn(btnBase, 'h-11 w-11 justify-center border border-border bg-surface hover:bg-surface/80 text-primary shadow-sm')}
           aria-label="LinkedIn Profile"
         >
-          <Link className="w-5 h-5" />
+          <LinkedinIcon className="w-[22px] h-[22px]" />
         </a>
       </div>
     </div>
