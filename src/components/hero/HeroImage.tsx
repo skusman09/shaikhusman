@@ -9,11 +9,12 @@ export function HeroImage({ className }: { className?: string }) {
       
       {/* Image Container */}
       <div className="relative h-full w-full overflow-hidden rounded-3xl border border-border/50 bg-surface/50 shadow-2xl flex items-center justify-center">
-        {/* Actual Placeholder Content */}
-        <div className="text-center text-muted">
-          <span className="block text-4xl mb-4">📸</span>
-          <span className="text-sm font-medium tracking-wide">{hero.imageAlt}</span>
-        </div>
+        {/* Actual Image Content */}
+        <img 
+          src="/images/usman-photo.png" 
+          alt={hero.imageAlt}
+          className="h-full w-full object-cover object-top" 
+        />
       </div>
     </div>
   );

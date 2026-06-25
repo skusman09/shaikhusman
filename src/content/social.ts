@@ -8,7 +8,7 @@ export const social: SocialLink[] = [
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/shaikh-mohammed-usman',
+    url: 'https://www.linkedin.com/in/shaikh-usman',
     icon: 'Linkedin',
   },
 ];

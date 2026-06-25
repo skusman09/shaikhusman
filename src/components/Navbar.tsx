@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { navigation, resume, logo } from '@/content';
+import { navigation, logo } from '@/content';
 import { Container } from './ui/Container';
 import { ThemeToggle } from './ThemeToggle';
-import { Button } from './ui/Button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
@@ -76,11 +75,6 @@ export function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <div className="hidden md:block">
-              <Button variant="secondary" size="sm">
-                {resume.label}
-              </Button>
-            </div>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -115,9 +109,6 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
-          <Button variant="secondary" size="lg" className="mt-4 w-full max-w-[200px]">
-            {resume.label}
-          </Button>
         </nav>
       </div>
     </header>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { cn } from '@/lib/cn';
 import { Download, GitBranch, Link } from 'lucide-react';
 import { hero } from '@/content';
@@ -30,7 +31,7 @@ export function HeroActions({ className }: { className?: string }) {
 
       {/* Ghost CTA — LinkedIn */}
       <a
-        href="https://linkedin.com/in/shaikh-mohammed-usman"
+        href="https://www.linkedin.com/in/shaikh-usman"
         target="_blank"
         rel="noopener noreferrer"
         className={cn(btnBase, 'h-11 px-5 text-base hover:bg-surface text-muted hover:text-primary')}

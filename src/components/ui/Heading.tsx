@@ -5,7 +5,7 @@ type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   as?: HeadingLevel;
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
 }
 
 export function Heading({
@@ -35,6 +35,7 @@ export function Heading({
     '2xl': 'text-2xl',
     '3xl': 'text-3xl md:text-4xl',
     '4xl': 'text-4xl md:text-5xl lg:text-6xl',
+    '5xl': 'text-5xl md:text-6xl lg:text-7xl',
   };
 
   return (
