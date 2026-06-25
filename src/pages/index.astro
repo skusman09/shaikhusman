@@ -104,7 +104,7 @@ import {
         {/* PROFESSIONAL EXPERIENCE CARDS: Product Engineering */}
         <div class="flex flex-col gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.productEngineeringHeading}</Heading>
-          <div class="grid gap-8 md:grid-cols-2">
+          <div class="grid gap-8 md:grid-cols-2 items-start">
             {experience.filter(e => e.category === 'Product Engineering').map((item) => (
               <ExpandableCard client:load item={item} variant="product" />
             ))}
@@ -122,7 +122,7 @@ import {
         {/* INTERNAL TOOL CARDS: Internal Engineering */}
         <div class="flex flex-col gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.internalEngineeringHeading}</Heading>
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {experience.filter(e => e.category === 'Internal Engineering').map((item) => (
               <ExpandableCard client:load item={item} variant="internal" />
             ))}
@@ -141,7 +141,7 @@ import {
         {projectsSection.description}
       </Paragraph>
 
-      <div class="grid gap-12 lg:grid-cols-2">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
         {projects.map((project) => (
           <ExpandableCard client:load item={project} variant="personal" />
         ))}
