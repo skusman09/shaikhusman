@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { siteConfig } from '@/data/site';
+import { navigation } from '@/content';
 import { Container } from './ui/Container';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/Button';
@@ -56,7 +56,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            {siteConfig.nav.map((item) => {
+            {navigation.map((item) => {
               const isActive = activeSection === item.href;
               return (
                 <a
@@ -105,7 +105,7 @@ export function Navbar() {
         )}
       >
         <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
-          {siteConfig.nav.map((item) => (
+          {navigation.map((item) => (
             <a
               key={item.href}
               href={item.href}

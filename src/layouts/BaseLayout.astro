@@ -7,14 +7,14 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-sans/700.css';
 
 import ThemeScript from '@/components/ThemeScript.astro';
-import { siteConfig } from '@/data/site';
+import { seo } from '@/content';
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { title = siteConfig.title, description = siteConfig.description } = Astro.props;
+const { title = seo.title, description = seo.description } = Astro.props;
 ---
 
 <!doctype html>
