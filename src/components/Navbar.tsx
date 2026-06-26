@@ -162,11 +162,11 @@ export function Navbar() {
         <div 
           ref={overlayRef}
           className={cn(
-            "flex flex-col items-center justify-center h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "flex flex-col items-center justify-start pt-[20vh] h-full w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             isOpen ? "scale-100 translate-y-0" : "scale-95 -translate-y-8"
           )}
         >
-          <nav className="flex flex-col items-center justify-center gap-10">
+          <nav className="flex flex-col items-center justify-center gap-8">
             {navigation.map((item) => {
               const isActive = activeSection === item.href;
               return (
@@ -174,7 +174,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-4xl sm:text-5xl font-semibold tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/50 rounded-xl px-6 py-2",
+                    "text-4xl sm:text-5xl font-semibold tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/50 rounded-xl px-6 py-1",
                     isActive ? "text-primary" : "text-muted hover:text-primary"
                   )}
                   onClick={() => setIsOpen(false)}
