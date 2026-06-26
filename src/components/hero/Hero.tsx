@@ -9,7 +9,7 @@ import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
   return (
-    <Section id="hero" className={cn("min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16", className)}>
+    <Section id="hero" className={cn("min-h-[85vh] flex items-center py-12 md:py-20", className)}>
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
