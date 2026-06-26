@@ -7,7 +7,7 @@ const btnBase = 'inline-flex items-center gap-2 rounded-md font-medium transitio
 
 export function HeroActions({ className }: { className?: string }) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-4 mt-8", className)}>
+    <div className={cn("flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8", className)}>
       {/* Primary CTA — Download Resume */}
       <a
         href={hero.cta.primary.href}
