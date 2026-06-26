@@ -9,10 +9,10 @@ import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
   return (
-    <Section id="hero" className={cn("min-h-[85vh] flex items-center pt-6 pb-12 md:pt-10 md:pb-20", className)}>
+    <Section id="hero" className={cn("min-h-[80vh] flex pt-12 pb-12 md:pt-20 md:pb-20 lg:pt-24", className)}>
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Mobile: Photo comes first by default, but we'll use order-last on mobile for text, order-first for image. 
               Actually, the prompt asks: 
@@ -32,7 +32,7 @@ export function Hero({ className }: { className?: string }) {
           <div className="order-2 lg:order-1 flex flex-col gap-4">
             <div className="flex flex-col gap-4">
               {/* Name: two-line layout — Shaikh Mohammed / Usman */}
-              <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-[2.75rem]">
+              <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-[2.625rem]">
                 {hero.name}
               </h1>
               <Heading as="h2" size="2xl" className="text-primary/60 font-light tracking-tight">
