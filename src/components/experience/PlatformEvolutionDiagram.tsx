@@ -30,62 +30,84 @@ const extensions = [
   },
 ];
 
+// Helper for drawing a solid downward arrow with strong contrast
+function DownArrow({ className }: { className?: string }) {
+  return (
+    <div className={cn("flex flex-col items-center", className)}>
+      <div className="w-[2px] h-8 md:h-10 bg-black/25 dark:bg-white/25 relative">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
+      </div>
+      <div className="h-[10px]" />
+    </div>
+  );
+}
+
 export function PlatformEvolutionDiagram({ className }: { className?: string }) {
   return (
     <div className={cn('flex flex-col items-center w-full', className)}>
       {/* 1. Original Platform */}
-      <Card className="flex flex-col items-center p-4 border border-border/50 bg-surface/30 min-w-[240px]">
-        <h4 className="font-semibold text-primary">MDPlix</h4>
-        <span className="text-xs text-muted mt-1">Original Healthcare Platform</span>
+      <Card className="flex flex-col items-center p-5 md:p-6 border border-black/20 dark:border-white/20 bg-surface/30 shadow-sm min-w-[260px] md:min-w-[300px]">
+        <h4 className="font-bold text-primary text-lg">MDPlix</h4>
+        <span className="text-sm text-muted mt-1 font-medium">Original Healthcare Platform</span>
       </Card>
 
-      {/* Arrow Down */}
-      <div className="w-px h-8 bg-border/80 relative">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-border/80 border-t-[6px] border-x-transparent border-x-[5px] border-b-0"></div>
-      </div>
-      <div className="h-[6px]" /> {/* Spacer for arrow head */}
+      <DownArrow className="mt-2" />
 
       {/* 2. Reusable Foundation */}
-      <Card className="flex flex-col items-center p-5 md:p-6 border border-accent/20 bg-accent/[0.02] shadow-sm mt-2 w-full max-w-2xl">
-        <h4 className="font-semibold text-primary mb-4 text-center">Reusable Backend Platform</h4>
-        <div className="flex flex-wrap justify-center gap-2">
+      <Card className="flex flex-col items-center p-6 md:p-8 border border-black/30 dark:border-white/30 bg-surface/50 shadow-md mt-2 w-full max-w-2xl">
+        <h4 className="font-bold text-accent text-lg md:text-xl mb-5 text-center">Reusable Backend Platform</h4>
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3">
           {sharedCapabilities.map((cap) => (
-            <span key={cap} className="px-2.5 py-1 text-[11px] md:text-xs font-medium rounded-md bg-surface border border-border/50 text-muted">
+            <span key={cap} className="px-3 py-1.5 text-[11px] md:text-xs font-semibold rounded-full bg-background border border-black/15 dark:border-white/15 text-muted shadow-sm">
               {cap}
             </span>
           ))}
         </div>
       </Card>
 
-      {/* 3. Branching Arrows */}
-      <div className="flex flex-col items-center w-full mt-2">
+      {/* Mobile Arrow (Single arrow for stacked list) */}
+      <div className="md:hidden mt-2">
+        <DownArrow />
+      </div>
+
+      {/* Desktop Branching Arrows (Only visible on md+) */}
+      <div className="hidden md:flex flex-col items-center w-full mt-2">
         {/* Main stem down */}
-        <div className="w-px h-6 bg-border/80"></div>
+        <div className="w-[2px] h-6 bg-black/25 dark:bg-white/25"></div>
         {/* Horizontal branch line */}
-        <div className="w-[85%] md:w-[70%] lg:w-[60%] h-px bg-border/80 relative">
-          {/* Three down stems from the horizontal line */}
-          <div className="absolute top-0 left-0 w-px h-6 bg-border/80">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-border/80 border-t-[6px] border-x-transparent border-x-[5px] border-b-0"></div>
+        <div className="w-[85%] lg:w-[65%] h-[2px] bg-black/25 dark:bg-white/25 relative">
+          {/* Three down stems */}
+          <div className="absolute top-0 left-0 w-[2px] h-6 bg-black/25 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-6 bg-border/80">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-border/80 border-t-[6px] border-x-transparent border-x-[5px] border-b-0"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-black/25 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
-          <div className="absolute top-0 right-0 w-px h-6 bg-border/80">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-border/80 border-t-[6px] border-x-transparent border-x-[5px] border-b-0"></div>
+          <div className="absolute top-0 right-0 w-[2px] h-6 bg-black/25 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
         </div>
+        <div className="h-8" /> {/* Spacer for arrow heads */}
       </div>
-      <div className="h-6" /> {/* Spacer for arrow heads */}
 
       {/* 4. Domain Products */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-2">
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-6 w-full max-w-5xl md:mt-2">
         {extensions.map((ext) => (
-          <Card key={ext.name} className="flex flex-col items-center p-5 border border-border/40 bg-surface/20 hover:border-border transition-colors">
-            <h4 className="font-semibold text-primary">{ext.name}</h4>
-            <span className="text-xs text-muted mt-1 mb-4">{ext.domain}</span>
-            <div className="flex flex-wrap justify-center gap-1.5 mt-auto">
+          <Card 
+            key={ext.name} 
+            className="flex flex-col p-6 border border-black/20 dark:border-white/20 bg-surface/30 shadow-sm hover:border-black/30 dark:hover:border-white/30 transition-colors"
+          >
+            <div className="flex flex-col items-center text-center">
+              <h4 className="font-bold text-lg text-primary">{ext.name}</h4>
+              <span className="text-sm font-medium text-muted mt-1 mb-5">{ext.domain}</span>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-2 mt-auto">
               {ext.chips.map((chip) => (
-                <span key={chip} className="px-2 py-0.5 text-[10px] font-medium rounded bg-background border border-border/30 text-muted/80">
+                <span 
+                  key={chip} 
+                  className="px-2.5 py-1 text-[11px] font-semibold rounded-md border border-black/15 dark:border-white/15 bg-background text-muted"
+                >
                   {chip}
                 </span>
               ))}
