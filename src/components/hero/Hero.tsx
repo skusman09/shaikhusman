@@ -23,7 +23,7 @@ export function Hero({ className }: { className?: string }) {
           
           {/* IMAGE SECTION — top-aligned with name block, slight top offset for optical alignment */}
           <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end lg:pt-2">
-            <div className="relative w-full max-w-[340px] md:max-w-[380px] lg:max-w-[420px]">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]">
               <HeroImage />
             </div>
           </div>

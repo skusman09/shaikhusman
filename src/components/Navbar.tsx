@@ -41,13 +41,13 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-bg/90 backdrop-blur-md">
       <Container>
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a
             href="/"
-            className="flex items-center gap-2 font-geist text-xl font-bold tracking-tight text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="flex items-center gap-2 font-heading text-xl font-bold tracking-tighter text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
             aria-label="Home"
           >
             {logo}
@@ -73,13 +73,13 @@ export function Navbar() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
 
             {/* Mobile Menu Toggle */}
             <button
               type="button"
-              className="md:hidden flex items-center justify-center w-9 h-9 rounded-md border border-border/50 text-primary hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="md:hidden flex items-center justify-center w-9 h-9 rounded-md border border-border/50 text-primary hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-label="Toggle menu"
@@ -91,24 +91,39 @@ export function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          "fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-sm md:hidden transition-all duration-300 ease-in-out",
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          "fixed inset-0 top-16 z-40 bg-bg/80 backdrop-blur-sm md:hidden transition-opacity duration-300",
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Navigation Sliding Drawer */}
+      <div
+        className={cn(
+          "fixed top-16 right-0 bottom-0 z-50 w-64 bg-surface border-l border-border/40 md:hidden transition-transform duration-300 ease-out shadow-2xl",
+          isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 p-6">
-          {navigation.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-2xl font-semibold tracking-tight text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm px-4 py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="flex flex-col gap-1 p-4">
+          {navigation.map((item) => {
+            const isActive = activeSection === item.href;
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-base font-medium tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-4 py-3 transition-colors",
+                  isActive ? "bg-accent/10 text-accent" : "text-muted hover:bg-bg hover:text-primary"
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>
