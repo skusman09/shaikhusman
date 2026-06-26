@@ -57,7 +57,7 @@ export const journey: JourneyPhase[] = [
   },
   {
     title: 'Continuous Learning',
-    description: 'Outside professional work, I continuously explore new technologies by building personal projects. StaffOne became my primary learning platform. Building and deploying my own product significantly improved my understanding of software beyond application development.',
+    description: 'Outside professional work, I continuously explore new technologies by building personal projects. Architecting and deploying StaffOne independently provided deep, hands-on experience with cloud infrastructure, multi-tenant databases, and production hosting.',
     milestones: [
       {
         title: 'Explorations',

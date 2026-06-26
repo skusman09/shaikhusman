@@ -28,7 +28,7 @@ const personSchema = {
   "url": siteUrl,
   "sameAs": [
     "https://github.com/skusman09",
-    "https://linkedin.com/in/shaikh-mohammed-usman"
+    "https://www.linkedin.com/in/shaikh-usman"
   ]
 };
 ---
@@ -39,12 +39,6 @@ const personSchema = {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 <link rel="canonical" href={canonicalUrl} />
-
-{/* Preload Fonts */}
-<link rel="preload" href="/_astro/@fontsource-variable/inter/index.css" as="style" />
-<link rel="preload" href="/_astro/@fontsource/geist-sans/400.css" as="style" />
-<link rel="preload" href="/_astro/@fontsource/geist-sans/500.css" as="style" />
-<link rel="preload" href="/_astro/@fontsource/geist-sans/600.css" as="style" />
 
 {/* Primary Meta Tags */}
 <title>{title}</title>
@@ -66,4 +60,4 @@ const personSchema = {
 <meta property="twitter:image" content={finalImageUrl} />
 
 {/* JSON-LD Schema */}
-<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />

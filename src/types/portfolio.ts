@@ -15,10 +15,6 @@ export interface HeroContent {
       href: string;
     };
   };
-  quickInfo: {
-    icon: string;
-    label: string;
-  }[];
 }
 
 export interface JourneyMilestone {

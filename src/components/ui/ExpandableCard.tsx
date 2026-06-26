@@ -162,7 +162,7 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
 
   if (variant === 'consulting') {
     return (
-      <div ref={cardRef} className={cn(BASE, 'p-8 md:p-10', className)}>
+      <div ref={cardRef} className={cn(BASE, 'p-6 md:p-8', className)}>
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <div className="flex-1 min-w-0 space-y-5">
             <div>
@@ -188,7 +188,7 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
 
   if (variant === 'internal') {
     return (
-      <div ref={cardRef} className={cn(BASE, 'p-6 flex flex-col', className)}>
+      <div ref={cardRef} className={cn(BASE, 'p-6 md:p-8 flex flex-col', className)}>
         <div className="h-10 w-10 bg-surface border border-border/50 rounded-lg mb-5 flex items-center justify-center text-lg">
           ⚙️
         </div>
