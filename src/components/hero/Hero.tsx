@@ -13,14 +13,14 @@ export function Hero({ className }: { className?: string }) {
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          
+
           {/* Mobile: Photo comes first by default, but we'll use order-last on mobile for text, order-first for image. 
               Actually, the prompt asks: 
               Mobile: Photo first -> Name -> Role -> Introduction -> Buttons -> Quick information 
               Desktop: Left side (Text), Right side (Photo)
               To achieve this, the image container must be first in DOM or use order utilities.
           */}
-          
+
           {/* IMAGE SECTION — top-aligned with name block, slight top offset for optical alignment */}
           <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end lg:pt-2">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]">
@@ -33,7 +33,7 @@ export function Hero({ className }: { className?: string }) {
             <div className="flex flex-col gap-4">
               {/* Name: two-line layout — Shaikh Mohammed / Usman */}
               <h1 className="font-heading font-semibold tracking-tighter leading-[1.08] text-primary text-4xl md:text-5xl lg:text-6xl">
-                Shaikh Mohammed<br />Usman
+                {hero.name}
               </h1>
               <Heading as="h2" size="2xl" className="text-primary/60 font-light tracking-tight">
                 {hero.role}
