@@ -12,7 +12,7 @@ export function Hero({ className }: { className?: string }) {
     <Section id="hero" className={cn("min-h-[80vh] flex pt-6 pb-12 md:pt-10 md:pb-20 lg:pt-12", className)}>
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start lg:items-center">
 
           {/* Mobile: Photo comes first by default, but we'll use order-last on mobile for text, order-first for image. 
               Actually, the prompt asks: 
@@ -21,8 +21,8 @@ export function Hero({ className }: { className?: string }) {
               To achieve this, the image container must be first in DOM or use order utilities.
           */}
 
-          {/* IMAGE SECTION — top-aligned with name block, slight top offset for optical alignment */}
-          <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end lg:pt-2">
+          {/* IMAGE SECTION — vertically centered relative to text block */}
+          <div className="order-1 lg:order-2 relative w-full flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]">
               <HeroImage />
             </div>
