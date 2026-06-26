@@ -9,7 +9,7 @@ import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
   return (
-    <Section id="hero" className={cn("min-h-[85vh] flex items-center py-12 md:py-20", className)}>
+    <Section id="hero" className={cn("min-h-[85vh] flex items-center pt-6 pb-12 md:pt-10 md:pb-20", className)}>
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -29,7 +29,7 @@ export function Hero({ className }: { className?: string }) {
           </div>
 
           {/* TEXT SECTION (Order 2 on mobile, Order 1 on desktop) */}
-          <div className="order-2 lg:order-1 flex flex-col gap-7">
+          <div className="order-2 lg:order-1 flex flex-col gap-4">
             <div className="flex flex-col gap-4">
               {/* Name: two-line layout — Shaikh Mohammed / Usman */}
               <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-5xl">
