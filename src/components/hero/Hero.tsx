@@ -9,7 +9,7 @@ import { hero } from '@/content';
 
 export function Hero({ className }: { className?: string }) {
   return (
-    <Section id="hero" className={cn("min-h-[80vh] flex pt-12 pb-12 md:pt-20 md:pb-20 lg:pt-24", className)}>
+    <Section id="hero" className={cn("min-h-[80vh] flex pt-6 pb-12 md:pt-10 md:pb-20 lg:pt-12", className)}>
       <Container>
         {/* CSS Grid for Desktop (2 columns) vs Mobile (1 column, reversed order) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -30,7 +30,7 @@ export function Hero({ className }: { className?: string }) {
 
           {/* TEXT SECTION (Order 2 on mobile, Order 1 on desktop) */}
           <div className="order-2 lg:order-1 flex flex-col gap-4">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
               {/* Name: two-line layout — Shaikh Mohammed / Usman */}
               <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-[2.625rem]">
                 {hero.name}
@@ -40,7 +40,7 @@ export function Hero({ className }: { className?: string }) {
               </Heading>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
               <Heading as="h3" size="xl" className="font-medium text-primary leading-snug max-w-xl">
                 {hero.tagline}
               </Heading>
@@ -51,7 +51,7 @@ export function Hero({ className }: { className?: string }) {
 
             <HeroActions />
 
-            <div className="pt-4 flex items-center gap-2.5 text-sm font-medium text-muted">
+            <div className="pt-4 flex items-center gap-2.5 text-md font-medium text-muted">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
