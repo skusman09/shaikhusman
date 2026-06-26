@@ -1,6 +1,5 @@
-[build]
-  command = "pnpm build"
-  publish = "dist"
+name = "shaikh-mohammed-usman-portfolio"
+compatibility_date = "2026-06-26"
 
-[build.environment]
-  NODE_VERSION = "20"
+[assets]
+directory = "./dist"
