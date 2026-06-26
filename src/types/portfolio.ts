@@ -67,7 +67,7 @@ export type TechCategory =
   | 'Databases' 
   | 'Architecture' 
   | 'Infrastructure' 
-  | 'Frontend' 
+  | 'Frontend Technologies Used' 
   | 'Automation' 
   | 'Developer Tools';
 
