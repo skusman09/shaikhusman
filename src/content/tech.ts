@@ -45,7 +45,7 @@ export const tech: TechGroup[] = [
     ],
   },
   {
-    category: 'Frontend',
+    category: 'Frontend Technologies Used',
     items: [
       { name: 'React' },
       { name: 'TypeScript' },

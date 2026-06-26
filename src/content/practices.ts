@@ -8,56 +8,56 @@ export const practices: Practice[] = [
   {
     id: 'api-design',
     title: 'RESTful API Design',
-    description: 'Design APIs that are intuitive, consistent, and versioned. Every endpoint follows clear naming conventions, uses proper HTTP semantics, and is documented via Swagger / OpenAPI before implementation begins.',
+    description: 'Design intuitive, consistent, and versioned APIs. Enforce clear naming conventions, proper HTTP semantics, and document via OpenAPI before implementation.',
   },
   {
     id: 'authentication',
     title: 'Authentication Systems',
-    description: 'Implement JWT-based authentication with access and refresh token flows. Enforce secure token storage, expiry handling, and stateless session management across multi-tenant environments.',
+    description: 'Implement JWT-based authentication with access and refresh tokens. Enforce secure storage, strict expiry, and stateless session management.',
   },
   {
     id: 'authorization',
     title: 'Role-Based Authorization',
-    description: 'Design granular RBAC permission layers that separate tenant-level, role-level, and resource-level access control. Authorization logic lives at the service layer, not in route handlers.',
+    description: 'Design granular RBAC layers separating tenant, role, and resource access. Authorization logic lives purely at the service layer.',
   },
   {
     id: 'background-jobs',
     title: 'Background Job Architecture',
-    description: 'Use Celery with Redis as a broker to offload heavy computation, report generation, email dispatch, and scheduling. Jobs are idempotent, retryable, and observable via task state tracking.',
+    description: 'Use Celery and Redis to offload heavy computation, reports, and emails. Ensure jobs are idempotent, retryable, and highly observable.',
   },
   {
     id: 'multi-tenant',
     title: 'Multi-tenant Architecture',
-    description: 'Architect platforms where a single codebase serves multiple isolated tenants. Tenant context is propagated through request middleware, and data isolation is enforced at the database query layer.',
+    description: 'Architect codebases serving multiple isolated tenants. Tenant context propagates via middleware, enforcing strict data isolation at the query layer.',
   },
   {
     id: 'caching',
     title: 'Caching Strategy',
-    description: 'Apply Redis caching for frequently read, rarely modified data (configuration, lookup tables, auth tokens). Cache invalidation is handled explicitly to prevent stale data in business-critical flows.',
+    description: 'Apply Redis caching for frequently read data. Handle invalidation explicitly to prevent stale state in business-critical flows.',
   },
   {
     id: 'deployment',
     title: 'Containerised Deployment',
-    description: 'Package all services with Docker and orchestrate local environments via Docker Compose. Production deployments target Linux VPS instances behind Nginx with environment-separated configuration.',
+    description: 'Package services with Docker. Orchestrate local environments via Compose and deploy to Linux VPS instances behind Nginx.',
   },
   {
     id: 'database-design',
     title: 'Database Design',
-    description: 'Model schemas to reflect domain reality. Apply normalization thoughtfully, use Alembic for schema migrations, and enforce constraints at the database level rather than relying solely on application code.',
+    description: 'Model schemas to reflect domain reality. Use Alembic for migrations and enforce data constraints at the database level.',
   },
   {
     id: 'automation',
     title: 'Workflow Automation',
-    description: 'Automate repeatable engineering tasks: data acquisition scripts, scheduled report runners, and internal API testing pipelines. Automation reduces human error and surfaces issues before they become incidents.',
+    description: 'Automate repeatable tasks: data acquisition, reports, and API testing. Reduce human error and surface issues proactively.',
   },
   {
     id: 'clean-architecture',
     title: 'Modular Architecture',
-    description: 'Organise code into clear layers: router → service → repository → model. Business logic lives in the service layer. This separation enables isolated testing, safe refactoring, and feature reuse across products.',
+    description: 'Organise code into clear layers: router → service → repository. This enables isolated testing, safe refactoring, and feature reuse.',
   },
   {
     id: 'documentation',
     title: 'Engineering Documentation',
-    description: 'Document architectural decisions, API contracts, and non-obvious business logic. Good documentation treats future engineers (including yourself) as the primary audience and reduces onboarding friction.',
+    description: 'Document architectural decisions and API contracts. Treat future engineers as the primary audience to reduce onboarding friction.',
   },
 ];

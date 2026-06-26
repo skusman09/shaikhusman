@@ -6,7 +6,7 @@ export const hero: HeroContent = {
   tagline: 'Building scalable backend platforms that evolve into real products.',
   statusBadge: 'Open to Backend Software Engineer opportunities',
   imageAlt: 'Shaikh Mohammed Usman',
-  introduction: '2+ years of experience building reusable backend platforms, enterprise applications, and automation systems using Python, FastAPI, PostgreSQL, Redis, and Docker.',
+  introduction: 'Backend Software Engineer specializing in designing reusable backend platforms and scalable architectures. I build robust microservice-based applications and resilient automation systems that drive complex enterprise workflows.',
   cta: {
     primary: {
       label: 'Download Resume',

@@ -1,9 +1,9 @@
 import type { ExperienceItem } from '@/types/portfolio';
 
 export const experienceSection = {
-  title: 'Professional Experience',
+  title: 'Engineering Experience',
   description: 'Since April 2024, I have operated as a core Backend Software Engineer at Suflon Tech LLP. My experience spans building reusable multi-tenant platforms, delivering enterprise consulting solutions, and creating internal automation tools—all unified by a focus on scalable architecture and engineering excellence.',
-  platformEvolutionHeading: 'Platform Evolution',
+  platformEvolutionHeading: 'Platform Architecture Evolution',
   platformEvolutionPlaceholder: `                    MDPlix
                       │
                       │
@@ -25,7 +25,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'Healthcare Platform',
     category: 'Product Engineering',
     description: 'Architected core backend services and designed the relational database models from scratch. Developed strict RESTful APIs using FastAPI and Pydantic for clinical and financial workflows.',
-    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker Swarm', 'AWS', 'SQLAlchemy', 'Alembic'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'AWS'],
     businessContext: 'The healthcare sector required a compliant, high-throughput platform to securely manage patient records, outpatient/inpatient workflows, and billing across multiple clinics. MDPlix was built as a multi-tenant B2B Healthcare Information System to unify these fragmented operations into a single platform.',
     responsibilities: [
       'Architected core backend services and designed the relational database models from scratch.',
@@ -52,7 +52,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'HR Management System',
     category: 'Product Engineering',
     description: 'Architected and built the core HRMS backend from scratch, enforcing a strict separation of concerns via a Layered Modular Monolith design. Engineered complex domain logic for timezone-aware attendance and automated payroll.',
-    technologies: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Redis', 'RQ', 'APScheduler', 'Alembic'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'RQ', 'APScheduler', 'Alembic'],
     businessContext: 'HR departments often struggle with fragmented tools for employee management. StaffOne was built as a centralized HR Management System (HRMS) to unify employee profiles, automate complex payroll calculations, manage leave requests, and accurately track global attendance with timezone awareness and geofencing.',
     responsibilities: [
       'Architected and built the core HRMS backend from scratch, enforcing a strict separation of concerns via a Layered Modular Monolith design.',
@@ -78,7 +78,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'B2B SaaS Platform',
     category: 'Product Engineering',
     description: 'Architected and deployed a 10-microservice ecosystem serving multiple isolated business tenants with complex billing, CRM, and real-time omnichannel communications.',
-    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'SQLAlchemy (Async)', 'Alembic', 'Docker', 'Traefik', 'AWS S3', 'Twilio', 'SendGrid', 'PhonePe'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'AWS'],
     businessContext: 'A B2B SaaS platform was needed to serve real estate and clinic businesses with multi-tenant workflows, complex billing, and real-time communications — all serving multiple isolated business tenants simultaneously.',
     responsibilities: [
       'Architected and deployed a 10-microservice ecosystem using FastAPI, async SQLAlchemy, and PostgreSQL.',
@@ -131,7 +131,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'E-commerce Platform',
     category: 'Product Engineering',
     description: 'Built and maintained an 8-microservice B2B e-commerce platform serving diverse tenants — retail vendors, healthcare providers, and service businesses — from a single unified architecture.',
-    technologies: ['FastAPI', 'PostgreSQL', 'SQLAlchemy 2.0 (Async)', 'Redis', 'Celery', 'RabbitMQ', 'Alembic', 'Docker', 'AWS S3', 'Cloudinary', 'Twilio', 'PhonePe'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'RabbitMQ', 'Docker'],
     businessContext: 'Multi-tenant B2B e-commerce platforms must handle wildly different tenants — retail vendors, healthcare providers, and service businesses — each with specialized billing, catalogue, and notification needs, all served from a single unified architecture.',
     responsibilities: [
       'Maintained and extended a centralized shared Python library (shoppyforce_common) housing all SQLAlchemy ORM models, Pydantic schemas, FastAPI middlewares, and RBAC permission matrices for the entire 8-service ecosystem.',
@@ -157,7 +157,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'Enterprise Consulting',
     category: 'Enterprise Consulting',
     description: 'Designed and implemented a modern, fully asynchronous backend using FastAPI and SQLAlchemy 2.0. Engineered automated incident response systems, including a geospatial auto-assignment service.',
-    technologies: ['FastAPI', 'PostgreSQL', 'SQLAlchemy 2.0 (Async)', 'Redis', 'Celery', 'APScheduler', 'Alembic', 'Docker'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'APScheduler', 'Docker'],
     businessContext: 'An enterprise client in Kuwait required a highly reliable system to monitor critical pipeline infrastructure. The goal was to track pipeline assets, process real-time sensor payloads, detect anomalies like water loss or leaks, and automatically orchestrate incident responses across multiple organizations securely.',
     responsibilities: [
       'Designed and implemented a modern, fully asynchronous backend using FastAPI and SQLAlchemy 2.0.',
@@ -234,7 +234,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'Internal Tool',
     category: 'Internal Engineering',
     description: 'Replaced a flaky, manual database seeding process with a reliable, single-click Python CLI that handles dependency ordering, transactions, and reporting.',
-    technologies: ['Python', 'SQLAlchemy', 'Pydantic', 'Pandas', 'PyYAML', 'PostgreSQL', 'MySQL'],
+    technologies: ['Python', 'SQLAlchemy', 'Pandas', 'PyYAML', 'PostgreSQL', 'MySQL'],
     businessContext: 'Initializing and populating complex healthcare databases required executing dozens of massive SQL scripts. Running these manually caused cascading failures due to strict foreign key constraints. This CLI replaced a flaky, manual seeding process with a reliable, single-click tool handling dependency ordering, transactions, and reporting.',
     responsibilities: [
       'Architected a robust Python database execution CLI using SQLAlchemy, capable of safely orchestrating complex, multi-gigabyte SQL scripts across PostgreSQL, MySQL, and SQL Server databases.',
@@ -259,7 +259,7 @@ export const experience: ExperienceItem[] = [
     dateRange: 'Internal Tool',
     category: 'Internal Engineering',
     description: 'Built a proof-of-concept Modular Monolith to simulate a production-grade payment service, validating core resilience patterns like circuit breakers and idempotency.',
-    technologies: ['Python', 'FastAPI', 'SQLAlchemy 2.0 (Async)', 'PostgreSQL', 'Celery', 'Redis', 'Pydantic', 'Alembic'],
+    technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'SQLAlchemy', 'Pydantic'],
     businessContext: 'Modern payment systems must be highly resilient against external gateway failures, timeouts, and duplicate processing. This project was built as a proof-of-concept Modular Monolith to simulate a production-grade payment service, designed to validate core resilience patterns required to handle async payment lifecycle events safely.',
     responsibilities: [
       'Designed a Modular Monolith in FastAPI and SQLAlchemy 2.0 (async), exposing a versioned REST API for payment lifecycle operations with an integrated Swagger UI.',

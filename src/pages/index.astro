@@ -81,11 +81,11 @@ import {
           </div>
         </div>
 
-        <div class="flex flex-col gap-10">
-          <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-8">
+          <div class="flex flex-col gap-3">
             <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.platformEvolutionHeading}</Heading>
             <Paragraph muted className="max-w-2xl leading-relaxed">
-              MDPlix became the foundation for multiple business products. Instead of rebuilding each application, the same backend platform was extended with domain-specific modules for different business domains.
+              MDPlix established a reusable backend architecture. Rather than rebuilding from scratch, we extended this core platform with domain-specific modules to rapidly launch new business products.
             </Paragraph>
           </div>
           
@@ -95,10 +95,6 @@ import {
               <PlatformEvolutionDiagram />
             </div>
           </div>
-
-          <Paragraph size="sm" muted className="max-w-3xl leading-relaxed text-center mx-auto -mt-2">
-            I contributed to building the original backend foundation and later extended the same architecture across multiple business products by implementing reusable services and domain-specific modules.
-          </Paragraph>
         </div>
 
         {/* PROFESSIONAL EXPERIENCE CARDS: Product Engineering */}
@@ -158,11 +154,14 @@ import {
           {tech.map((group) => (
             <div class="flex flex-col gap-4 p-6 rounded-2xl border border-border/40 bg-background/50 hover:bg-surface/30 transition-colors">
               <span class="text-base font-semibold text-primary">{group.category}</span>
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-col gap-2 mt-1">
                 {group.items.map((item) => (
-                  <span class="text-xs px-3 py-1.5 bg-surface border border-border/50 rounded-full text-muted hover:text-primary hover:border-border transition-colors">
-                    {item.name}
-                  </span>
+                  <div class="flex items-center gap-2">
+                    <span class="text-accent/50 text-sm leading-none">›</span>
+                    <span class="text-sm text-muted hover:text-primary transition-colors">
+                      {item.name}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -175,13 +174,13 @@ import {
   {/* ENGINEERING PRACTICES SECTION */}
   <Section id="practices" className="py-24 md:py-32">
     <Container>
-      <div class="flex flex-col gap-16">
+      <div class="flex flex-col gap-12">
         <Heading as="h2" size="4xl" className="tracking-tight">{practicesSection.title}</Heading>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {practices.map((practice) => (
-            <div class="flex flex-col gap-4 group p-6 md:p-8 rounded-2xl border border-border/40 bg-surface/30 hover:border-border transition-colors">
-              <div class="h-12 w-12 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 transition-colors">
-                <span class="text-accent text-xl">✦</span>
+            <div class="flex flex-col gap-3 group p-5 md:p-6 rounded-2xl border border-border/40 bg-surface/30 hover:border-border transition-colors">
+              <div class="h-10 w-10 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 transition-colors">
+                <span class="text-accent text-lg">✦</span>
               </div>
               <div class="flex flex-col gap-2">
                 <h4 class="text-lg font-semibold text-primary">{practice.title}</h4>
