@@ -30,12 +30,12 @@ const extensions = [
   },
 ];
 
-// Helper for drawing a solid downward arrow with strong contrast
+// Helper for drawing a solid downward arrow
 function DownArrow({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-col items-center", className)}>
-      <div className="w-[2px] h-8 md:h-10 bg-black/25 dark:bg-white/25 relative">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
+      <div className="w-[2px] h-8 md:h-10 bg-neutral-500 dark:bg-white/25 relative">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-neutral-500 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
       </div>
       <div className="h-[10px]" />
     </div>
@@ -46,7 +46,7 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
   return (
     <div className={cn('flex flex-col items-center w-full', className)}>
       {/* 1. Original Platform */}
-      <Card className="flex flex-col items-center p-5 md:p-6 border border-black/20 dark:border-white/20 bg-surface/30 shadow-sm min-w-[260px] md:min-w-[300px]">
+      <Card className="flex flex-col items-center p-5 md:p-6 border border-neutral-300 dark:border-white/20 bg-white dark:bg-surface/30 shadow-sm min-w-[260px] md:min-w-[300px]">
         <h4 className="font-bold text-primary text-lg">MDPlix</h4>
         <span className="text-sm text-muted mt-1 font-medium">Original Healthcare Platform</span>
       </Card>
@@ -54,11 +54,11 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
       <DownArrow className="mt-2" />
 
       {/* 2. Reusable Foundation */}
-      <Card className="flex flex-col items-center p-6 md:p-8 border border-black/30 dark:border-white/30 bg-surface/50 shadow-md mt-2 w-full max-w-2xl">
+      <Card className="flex flex-col items-center p-6 md:p-8 border border-neutral-400 dark:border-white/30 bg-white dark:bg-surface/50 shadow-md mt-2 w-full max-w-2xl">
         <h4 className="font-bold text-accent text-lg md:text-xl mb-5 text-center">Reusable Backend Platform</h4>
         <div className="flex flex-wrap justify-center gap-2 md:gap-3">
           {sharedCapabilities.map((cap) => (
-            <span key={cap} className="px-3 py-1.5 text-[11px] md:text-xs font-semibold rounded-full bg-background border border-black/15 dark:border-white/15 text-muted shadow-sm">
+            <span key={cap} className="px-3 py-1.5 text-[11px] md:text-xs font-semibold rounded-full bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-white/15 text-neutral-800 dark:text-white/90 shadow-sm">
               {cap}
             </span>
           ))}
@@ -73,18 +73,18 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
       {/* Desktop Branching Arrows (Only visible on md+) */}
       <div className="hidden md:flex flex-col items-center w-full mt-2">
         {/* Main stem down */}
-        <div className="w-[2px] h-6 bg-black/25 dark:bg-white/25"></div>
+        <div className="w-[2px] h-6 bg-neutral-500 dark:bg-white/25"></div>
         {/* Horizontal branch line */}
-        <div className="w-[85%] lg:w-[65%] h-[2px] bg-black/25 dark:bg-white/25 relative">
+        <div className="w-[85%] lg:w-[65%] h-[2px] bg-neutral-500 dark:bg-white/25 relative">
           {/* Three down stems */}
-          <div className="absolute top-0 left-0 w-[2px] h-6 bg-black/25 dark:bg-white/25">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
+          <div className="absolute top-0 left-0 w-[2px] h-6 bg-neutral-500 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-neutral-500 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-black/25 dark:bg-white/25">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-6 bg-neutral-500 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-neutral-500 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
-          <div className="absolute top-0 right-0 w-[2px] h-6 bg-black/25 dark:bg-white/25">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-black/25 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
+          <div className="absolute top-0 right-0 w-[2px] h-6 bg-neutral-500 dark:bg-white/25">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full border-solid border-t-neutral-500 dark:border-t-white/25 border-t-[10px] border-x-transparent border-x-[8px] border-b-0"></div>
           </div>
         </div>
         <div className="h-8" /> {/* Spacer for arrow heads */}
@@ -93,20 +93,20 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
       {/* 4. Domain Products */}
       <div className="flex flex-col md:grid md:grid-cols-3 gap-6 w-full max-w-5xl md:mt-2">
         {extensions.map((ext) => (
-          <Card 
-            key={ext.name} 
-            className="flex flex-col p-6 border border-black/20 dark:border-white/20 bg-surface/30 shadow-sm hover:border-black/30 dark:hover:border-white/30 transition-colors"
+          <Card
+            key={ext.name}
+            className="flex flex-col p-6 border border-neutral-300 dark:border-white/20 bg-white dark:bg-surface/30 shadow-sm transition-colors"
           >
             <div className="flex flex-col items-center text-center">
               <h4 className="font-bold text-lg text-primary">{ext.name}</h4>
               <span className="text-sm font-medium text-muted mt-1 mb-5">{ext.domain}</span>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-2 mt-auto">
               {ext.chips.map((chip) => (
-                <span 
-                  key={chip} 
-                  className="px-2.5 py-1 text-[11px] font-semibold rounded-md border border-black/15 dark:border-white/15 bg-background text-muted"
+                <span
+                  key={chip}
+                  className="px-2.5 py-1 text-[11px] font-semibold rounded-md border border-neutral-300 dark:border-white/15 bg-neutral-100 dark:bg-surface text-neutral-800 dark:text-white/90"
                 >
                   {chip}
                 </span>
