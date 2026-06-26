@@ -1,0 +1,69 @@
+---
+import { seo } from '@/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'profile';
+  canonicalUrl?: string;
+}
+
+const { 
+  title = seo.title, 
+  description = seo.description, 
+  image = '/images/og-image.png',
+  type = 'website',
+  canonicalUrl = Astro.url.href
+} = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.href : 'https://shaikhusman.dev';
+const finalImageUrl = new URL(image, siteUrl).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shaikh Mohammed Usman",
+  "jobTitle": "Backend Software Engineer",
+  "url": siteUrl,
+  "sameAs": [
+    "https://github.com/skusman09",
+    "https://linkedin.com/in/shaikh-mohammed-usman"
+  ]
+};
+---
+
+{/* Global Metadata */}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonicalUrl} />
+
+{/* Preload Fonts */}
+<link rel="preload" href="/_astro/@fontsource-variable/inter/index.css" as="style" />
+<link rel="preload" href="/_astro/@fontsource/geist-sans/400.css" as="style" />
+<link rel="preload" href="/_astro/@fontsource/geist-sans/500.css" as="style" />
+<link rel="preload" href="/_astro/@fontsource/geist-sans/600.css" as="style" />
+
+{/* Primary Meta Tags */}
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+{/* Open Graph / Facebook */}
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={finalImageUrl} />
+
+{/* Twitter */}
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={finalImageUrl} />
+
+{/* JSON-LD Schema */}
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />

@@ -14,6 +14,8 @@ export function HeroImage({ className }: { className?: string }) {
           src="/images/usman-photo.png" 
           alt={hero.imageAlt}
           className="h-full w-full object-cover object-top" 
+          fetchPriority="high"
+          loading="eager"
         />
       </div>
     </div>

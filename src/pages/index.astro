@@ -106,7 +106,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.productEngineeringHeading}</Heading>
           <div class="grid gap-8 md:grid-cols-2 items-start">
             {experience.filter(e => e.category === 'Product Engineering').map((item) => (
-              <ExpandableCard client:load item={item} variant="product" />
+              <ExpandableCard client:visible item={item} variant="product" />
             ))}
           </div>
         </div>
@@ -115,7 +115,7 @@ import {
         <div class="flex flex-col gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.enterpriseConsultingHeading}</Heading>
           {experience.filter(e => e.category === 'Enterprise Consulting').map((item) => (
-            <ExpandableCard client:load item={item} variant="consulting" />
+            <ExpandableCard client:visible item={item} variant="consulting" />
           ))}
         </div>
 
@@ -124,7 +124,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.internalEngineeringHeading}</Heading>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {experience.filter(e => e.category === 'Internal Engineering').map((item) => (
-              <ExpandableCard client:load item={item} variant="internal" />
+              <ExpandableCard client:visible item={item} variant="internal" />
             ))}
           </div>
         </div>
@@ -143,7 +143,7 @@ import {
 
       <div class="grid gap-12 lg:grid-cols-2 items-start">
         {projects.map((project) => (
-          <ExpandableCard client:load item={project} variant="personal" />
+          <ExpandableCard client:visible item={project} variant="personal" />
         ))}
       </div>
     </Container>

@@ -17,8 +17,9 @@ function ToggleButton({ expanded, onClick }: { expanded: boolean; onClick: () =>
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-accent transition-colors duration-150 w-fit"
+      className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-sm transition-colors duration-150 w-fit"
       aria-expanded={expanded}
+      aria-label={expanded ? "Show less details" : "Show more details"}
     >
       {expanded ? 'Show Less' : 'More Details'}
       <ChevronDown
