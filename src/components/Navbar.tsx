@@ -172,7 +172,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-bg/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-surface/80 backdrop-blur-md">
         <Container>
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}

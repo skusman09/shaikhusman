@@ -32,7 +32,7 @@ export function Hero({ className }: { className?: string }) {
           <div className="order-2 lg:order-1 flex flex-col gap-4">
             <div className="flex flex-col gap-4">
               {/* Name: two-line layout — Shaikh Mohammed / Usman */}
-              <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-5xl">
+              <h1 className="font-heading font-semibold tracking-tighter leading-[1.05] text-primary text-3xl md:text-4xl lg:text-[2.75rem]">
                 {hero.name}
               </h1>
               <Heading as="h2" size="2xl" className="text-primary/60 font-light tracking-tight">
