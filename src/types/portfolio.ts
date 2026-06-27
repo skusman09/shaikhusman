@@ -63,12 +63,13 @@ export interface Project {
 }
 
 export type TechCategory = 
-  | 'Backend Engineering' 
-  | 'Data & Storage' 
-  | 'Architecture & Patterns' 
-  | 'Infrastructure & Deployment' 
-  | 'Automation & Integration'
-  | 'Supporting Technologies'
+  | 'Backend Engineering'
+  | 'Data & Messaging'
+  | 'DevOps & Infrastructure'
+  | 'Architecture & System Design'
+  | 'Security & Reliability'
+  | 'Automation & Integrations'
+  | 'Supporting Frontend Technologies'
   | 'Developer Tooling';
 
 export interface TechItem {

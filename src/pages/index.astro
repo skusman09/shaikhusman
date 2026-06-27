@@ -146,25 +146,28 @@ import {
         <Heading as="h2" size="4xl" className="tracking-tight">{techSection.title}</Heading>
         <Paragraph size="lg" muted className="max-w-2xl leading-relaxed">{techSection.subtitle}</Paragraph>
       </div>
-      <div class="grid gap-5 lg:grid-cols-2">
-        {tech.map((group) => (
-          <div class="flex flex-col gap-5 p-6 md:p-7 rounded-2xl border border-border/40 bg-background/50 hover:border-border/70 transition-colors duration-200">
-            <span class="text-xs font-semibold uppercase tracking-widest text-accent/70">{group.category}</span>
-            <div class="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                item.primary ? (
-                  <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-accent/10 border border-accent/25 text-primary transition-colors duration-150 hover:bg-accent/15 hover:border-accent/40">
-                    {item.name}
-                  </span>
-                ) : (
-                  <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-normal bg-surface/60 border border-border/40 text-muted transition-colors duration-150 hover:text-primary hover:border-border/70">
-                    {item.name}
-                  </span>
-                )
-              ))}
+      <div class="grid gap-5 lg:grid-cols-2 items-start">
+        {tech.map((group) => {
+          const isSupportingFrontend = group.category === 'Supporting Frontend Technologies';
+          return (
+            <div class={`flex flex-col gap-5 p-6 md:p-7 rounded-2xl border transition-colors duration-200 ${isSupportingFrontend ? 'border-border/25 bg-background/30 hover:border-border/40 opacity-70 hover:opacity-90' : 'border-border/40 bg-background/50 hover:border-border/70'}`}>
+              <span class={`text-xs font-semibold uppercase tracking-widest ${isSupportingFrontend ? 'text-muted/60' : 'text-accent/70'}`}>{group.category}</span>
+              <div class="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  item.primary ? (
+                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-accent/10 border border-accent/25 text-primary transition-colors duration-150 hover:bg-accent/15 hover:border-accent/40">
+                      {item.name}
+                    </span>
+                  ) : (
+                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-normal bg-surface/60 border border-border/40 text-muted transition-colors duration-150 hover:text-primary hover:border-border/70">
+                      {item.name}
+                    </span>
+                  )
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Container>
   </Section>
