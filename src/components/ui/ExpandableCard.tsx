@@ -3,7 +3,7 @@ import { cn } from '@/lib/cn';
 import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
 import type { ExperienceItem, Project } from '@/types/portfolio';
-import { ChevronDown, ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink, Network, Layers } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/BrandIcons';
 
 interface ExpandableCardProps {
@@ -202,10 +202,11 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
   }
 
   if (variant === 'personal') {
+    const ProjectIcon = item.id === 'staffone' ? Layers : Network;
     return (
       <div ref={cardRef} className={cn(BASE, 'overflow-hidden flex flex-col h-full', className)}>
-        <div className="h-44 bg-surface/50 border-b border-border/50 w-full flex items-center justify-center text-5xl opacity-40">
-          🚀
+        <div className="h-44 bg-surface/50 border-b border-border/50 w-full flex items-center justify-center opacity-40">
+          <ProjectIcon className="w-16 h-16 text-muted" strokeWidth={1} />
         </div>
         <div className="p-6 md:p-8 flex flex-col flex-1">
           <Heading as="h4" size="xl" className="mb-3">{item.title}</Heading>

@@ -10,11 +10,11 @@ export const projects: Project[] = [
     id: 'staffone',
     title: 'StaffOne',
     // github: 'https://github.com/skusman09',
-    description: 'Architected and built the core HRMS backend from scratch, enforcing a strict separation of concerns via a Layered Modular Monolith design. Engineered complex domain logic for timezone-aware attendance and automated payroll.',
+    description: 'Architected and built a multi-tenant Workforce Management Platform supporting employee onboarding, attendance tracking, leave management, payroll processing, notifications, reporting workflows, and role-based access control.',
     technologies: ['FastAPI', 'PostgreSQL', 'Redis', 'RQ', 'APScheduler', 'Alembic', 'React', 'Docker'],
-    businessContext: 'HR departments often struggle with fragmented tools for employee management. StaffOne was built as a centralized HR Management System (HRMS) to unify employee profiles, automate complex payroll calculations, manage leave requests, and accurately track global attendance with timezone awareness and geofencing.',
+    businessContext: 'Workforce operations teams often struggle with fragmented tools across attendance, payroll, and compliance. StaffOne was built as a centralized Workforce Management Platform to unify employee onboarding, automate complex payroll calculations, manage leave requests, and accurately track global attendance with timezone awareness and geofencing.',
     responsibilities: [
-      'Architected and built the core HRMS backend from scratch, enforcing a strict separation of concerns via a Layered Modular Monolith design.',
+      'Architected and built the core Workforce Management Platform backend from scratch, enforcing a strict separation of concerns via a Layered Modular Monolith design.',
       'Engineered complex domain logic, including timezone-aware attendance tracking, overlapping leave validation, and an automated monthly payroll engine.',
       'Implemented robust background job queues using Redis and RQ to handle asynchronous tasks like PDF slip generation.',
       'Secured the API endpoints with JWT-based authentication and a custom Role-Based Access Control (RBAC) system.'
