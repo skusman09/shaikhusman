@@ -93,19 +93,17 @@ import {
           </div>
         </div>
 
-        {/* PROFESSIONAL EXPERIENCE CARDS: Product Engineering */}
+        {/* PROFESSIONAL EXPERIENCE CARDS */}
         <div class="flex flex-col gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.productEngineeringHeading}</Heading>
+          
           <div class="grid gap-8 md:grid-cols-2 items-start">
             {experience.filter(e => e.category === 'Product Engineering').map((item) => (
               <ExpandableCard client:visible item={item} variant="product" />
             ))}
           </div>
-        </div>
 
-        {/* PROJECT CARD: Enterprise Consulting */}
-        <div class="flex flex-col gap-12">
-          <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.enterpriseConsultingHeading}</Heading>
+          {/* Render Enterprise Consulting items under the same visual section */}
           {experience.filter(e => e.category === 'Enterprise Consulting').map((item) => (
             <ExpandableCard client:visible item={item} variant="consulting" />
           ))}
