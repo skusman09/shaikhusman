@@ -2,74 +2,90 @@ import type { TechGroup } from '@/types/portfolio';
 
 export const techSection = {
   title: 'Engineering Stack',
+  subtitle: 'Technologies and patterns I use to design and ship production backend systems.',
 };
 
 export const tech: TechGroup[] = [
   {
-    category: 'Backend',
+    category: 'Backend Engineering',
     items: [
-      { name: 'Python' },
-      { name: 'FastAPI' },
-      { name: 'SQLAlchemy' },
+      { name: 'Python', primary: true },
+      { name: 'FastAPI', primary: true },
+      { name: 'SQLAlchemy', primary: true },
       { name: 'Pydantic' },
       { name: 'Alembic' },
       { name: 'Celery' },
+      { name: 'RQ' },
+      { name: 'APScheduler' },
     ],
   },
   {
-    category: 'Databases',
+    category: 'Data & Storage',
     items: [
-      { name: 'PostgreSQL' },
-      { name: 'Redis' },
+      { name: 'PostgreSQL', primary: true },
+      { name: 'Redis', primary: true },
+      { name: 'MySQL' },
+      { name: 'SQL Server' },
+      { name: 'RabbitMQ' },
     ],
   },
   {
-    category: 'Architecture',
+    category: 'Architecture & Patterns',
     items: [
-      { name: 'Multi-tenant' },
+      { name: 'Multi-tenant Architecture', primary: true },
       { name: 'REST API Design' },
-      { name: 'Background Jobs' },
-      { name: 'Event Scheduling' },
+      { name: 'Modular Monolith' },
+      { name: 'Background Jobs & Queues' },
       { name: 'State Machines' },
-      { name: 'Modular Design' },
+      { name: 'Event-Driven Design' },
+      { name: 'Circuit Breakers' },
+      { name: 'Idempotency Patterns' },
     ],
   },
   {
-    category: 'Infrastructure',
+    category: 'Infrastructure & Deployment',
     items: [
-      { name: 'Docker' },
-      { name: 'Linux' },
+      { name: 'Docker', primary: true },
+      { name: 'Docker Compose' },
+      { name: 'Linux / Ubuntu' },
       { name: 'Nginx' },
       { name: 'Cloudflare' },
       { name: 'VPS Hosting' },
+      { name: 'AWS (EC2 / S3)' },
     ],
   },
   {
-    category: 'Frontend Technologies Used',
+    category: 'Automation & Integration',
+    items: [
+      { name: 'Webhook Processing' },
+      { name: 'Celery Beat' },
+      { name: 'Browser Automation' },
+      { name: 'Reporting Pipelines' },
+      { name: 'Data Acquisition' },
+      { name: 'Playwright' },
+    ],
+  },
+  {
+    category: 'Supporting Technologies',
     items: [
       { name: 'React' },
       { name: 'TypeScript' },
-      { name: 'Astro' },
       { name: 'TailwindCSS' },
+      { name: 'Astro' },
+      { name: 'Pandas' },
+      { name: 'PyInstaller' },
     ],
   },
   {
-    category: 'Automation',
-    items: [
-      { name: 'Celery Beat' },
-      { name: 'Webhook Integration' },
-      { name: 'Data Acquisition' },
-      { name: 'Reporting Pipelines' },
-    ],
-  },
-  {
-    category: 'Developer Tools',
+    category: 'Developer Tooling',
     items: [
       { name: 'Git' },
       { name: 'Swagger / OpenAPI' },
       { name: 'Postman' },
-      { name: 'VS Code' },
       { name: 'Docker Compose' },
+      { name: 'VS Code' },
+      { name: 'Locust' },
+      { name: 'Pytest' },
     ],
   },
 ];

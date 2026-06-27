@@ -142,28 +142,33 @@ import {
   {/* TECH / ENGINEERING STACK SECTION */}
   <Section id="tech" className="bg-surface/30 border-t border-border/40 py-24 md:py-32">
     <Container>
-      <div class="flex flex-col gap-16">
+      <div class="flex flex-col gap-4 mb-16">
         <Heading as="h2" size="4xl" className="tracking-tight">{techSection.title}</Heading>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {tech.map((group) => (
-            <div class="flex flex-col gap-4 p-6 rounded-2xl border border-border/40 bg-background/50 hover:bg-surface/30 transition-colors">
-              <span class="text-base font-semibold text-primary">{group.category}</span>
-              <div class="flex flex-col gap-2 mt-1">
-                {group.items.map((item) => (
-                  <div class="flex items-center gap-2">
-                    <span class="text-accent/50 text-sm leading-none">›</span>
-                    <span class="text-sm text-muted hover:text-primary transition-colors">
-                      {item.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+        <Paragraph size="lg" muted className="max-w-2xl leading-relaxed">{techSection.subtitle}</Paragraph>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-2">
+        {tech.map((group) => (
+          <div class="flex flex-col gap-5 p-6 md:p-7 rounded-2xl border border-border/40 bg-background/50 hover:border-border/70 transition-colors duration-200">
+            <span class="text-xs font-semibold uppercase tracking-widest text-accent/70">{group.category}</span>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                item.primary ? (
+                  <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium bg-accent/10 border border-accent/25 text-primary transition-colors duration-150 hover:bg-accent/15 hover:border-accent/40">
+                    {item.name}
+                  </span>
+                ) : (
+                  <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-normal bg-surface/60 border border-border/40 text-muted transition-colors duration-150 hover:text-primary hover:border-border/70">
+                    {item.name}
+                  </span>
+                )
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </Container>
   </Section>
+
 
   {/* ENGINEERING PRACTICES SECTION */}
   <Section id="practices" className="py-24 md:py-32">
