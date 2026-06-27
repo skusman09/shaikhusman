@@ -203,7 +203,7 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
 
   if (variant === 'personal') {
     return (
-      <div ref={cardRef} className={cn(BASE, 'overflow-hidden flex flex-col', className)}>
+      <div ref={cardRef} className={cn(BASE, 'overflow-hidden flex flex-col h-full', className)}>
         <div className="h-44 bg-surface/50 border-b border-border/50 w-full flex items-center justify-center text-5xl opacity-40">
           🚀
         </div>

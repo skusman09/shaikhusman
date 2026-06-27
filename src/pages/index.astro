@@ -131,7 +131,7 @@ import {
         {projectsSection.description}
       </Paragraph>
 
-      <div class="grid gap-12 lg:grid-cols-2 items-start">
+      <div class="grid gap-12 lg:grid-cols-2 items-stretch">
         {projects.map((project) => (
           <ExpandableCard client:visible item={project} variant="personal" />
         ))}
