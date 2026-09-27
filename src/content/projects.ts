@@ -48,18 +48,6 @@ export const projects: Project[] = [
     architecture: '12-Factor App methodology following classic Spring Boot controller-service-repository patterns.'
   },
   {
-    id: 'gesture-draw',
-    title: 'Air Canvas (Gesture Draw)',
-    github: 'https://github.com/skusman09/gesture-draw',
-    description: 'A real-time computer vision application using webcam input and MediaPipe hand tracking to paint on a virtual canvas.',
-    technologies: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
-    businessContext: 'An interactive exploration of computer vision capabilities allowing mid-air drawing without physical input devices.',
-    responsibilities: [
-      'Integrated Google MediaPipe for high-performance, real-time hand landmark detection.',
-      'Developed gesture recognition algorithms distinguishing between drawing, erasing, and UI interaction.'
-    ]
-  },
-  {
     id: 'payment-service-poc',
     title: 'Payment Service POC',
     github: 'https://github.com/MYXPS09/ResilientPaymentProcessingService',
@@ -71,6 +59,18 @@ export const projects: Project[] = [
       'Configured Celery and Redis to handle asynchronous background processing of payment state transitions.'
     ],
     architecture: 'Strict Idempotency via database constraints and Pessimistic Locking (SELECT FOR UPDATE SKIP LOCKED) to guarantee At-Least-Once Delivery without duplicates.'
+  },
+  {
+    id: 'gesture-draw',
+    title: 'Air Canvas (Gesture Draw)',
+    github: 'https://github.com/skusman09/gesture-draw',
+    description: 'A real-time computer vision application using webcam input and MediaPipe hand tracking to paint on a virtual canvas.',
+    technologies: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
+    businessContext: 'An interactive exploration of computer vision capabilities allowing mid-air drawing without physical input devices.',
+    responsibilities: [
+      'Integrated Google MediaPipe for high-performance, real-time hand landmark detection.',
+      'Developed gesture recognition algorithms distinguishing between drawing, erasing, and UI interaction.'
+    ]
   },
   {
     id: 'ctc-pizzeria',

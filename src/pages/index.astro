@@ -129,24 +129,32 @@ import {
     </Container>
   </Section>
 
-  {/* PERSONAL PROJECTS SECTION */}
-  <Section id="projects" className="py-10 md:py-20">
+  {/* ENGINEERING PRACTICES SECTION */}
+  <Section id="practices" className="py-10 md:py-20 reveal-on-scroll">
     <Container>
-      <Heading as="h2" size="4xl" className="mb-4 md:mb-6 tracking-tight">{projectsSection.title}</Heading>
-      <Paragraph size="lg" muted className="mb-10 md:mb-12 max-w-3xl leading-relaxed">
-        {projectsSection.description}
-      </Paragraph>
-
-      <div class="grid gap-8 lg:grid-cols-2 items-stretch">
-        {projects.map((project) => (
-          <ExpandableCard key={project.id} client:visible item={project} variant="personal" />
-        ))}
+      <div class="flex flex-col gap-12">
+        <Heading as="h2" size="4xl" className="tracking-tight">{practicesSection.title}</Heading>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {practices.map((practice) => (
+            <div class="flex flex-col gap-3 group p-5 md:p-6 rounded-2xl border border-border/70 bg-surface/80 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+              <div class="h-10 w-10 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 group-hover:scale-110 transition-all duration-300">
+                <span class="text-accent text-lg">✦</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-lg font-semibold text-primary">{practice.title}</h4>
+                <Paragraph size="sm" muted className="leading-relaxed">
+                  {practice.description}
+                </Paragraph>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </Container>
   </Section>
 
   {/* TECH / ENGINEERING STACK SECTION */}
-  <Section id="tech" className="bg-surface/20 border-y border-border/40 py-10 md:py-20">
+  <Section id="tech" className="bg-surface/20 border-y border-border/40 py-10 md:py-20 reveal-on-scroll">
     <Container>
       <div class="flex flex-col gap-3 mb-10 md:mb-12">
         <Heading as="h2" size="4xl" className="tracking-tight">{techSection.title}</Heading>
@@ -177,9 +185,25 @@ import {
     </Container>
   </Section>
 
+  {/* PERSONAL PROJECTS SECTION */}
+  <Section id="projects" className="py-10 md:py-20 reveal-on-scroll">
+    <Container>
+      <Heading as="h2" size="4xl" className="mb-4 md:mb-6 tracking-tight">{projectsSection.title}</Heading>
+      <Paragraph size="lg" muted className="mb-10 md:mb-12 max-w-3xl leading-relaxed">
+        {projectsSection.description}
+      </Paragraph>
+
+      <div class="grid gap-8 lg:grid-cols-2 items-stretch">
+        {projects.map((project) => (
+          <ExpandableCard key={project.id} client:visible item={project} variant="personal" />
+        ))}
+      </div>
+    </Container>
+  </Section>
+
 
   {/* EDUCATION & RESEARCH SECTION */}
-  <Section id="education" className="py-10 md:py-20 reveal-on-scroll">
+  <Section id="education" className="bg-surface/20 border-y border-border/40 py-10 md:py-20 reveal-on-scroll">
     <Container>
       <div class="flex flex-col gap-10 md:gap-16">
         <div class="flex flex-col gap-3">
@@ -274,30 +298,6 @@ import {
           </div>
         </div>
 
-      </div>
-    </Container>
-  </Section>
-
-  {/* ENGINEERING PRACTICES SECTION */}
-  <Section id="practices" className="bg-surface/20 py-10 md:py-20 border-t border-border/40">
-    <Container>
-      <div class="flex flex-col gap-12">
-        <Heading as="h2" size="4xl" className="tracking-tight">{practicesSection.title}</Heading>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {practices.map((practice) => (
-            <div class="flex flex-col gap-3 group p-5 md:p-6 rounded-2xl border border-border/70 bg-surface/80 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-              <div class="h-10 w-10 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 group-hover:scale-110 transition-all duration-300">
-                <span class="text-accent text-lg">✦</span>
-              </div>
-              <div class="flex flex-col gap-2">
-                <h4 class="text-lg font-semibold text-primary">{practice.title}</h4>
-                <Paragraph size="sm" muted className="leading-relaxed">
-                  {practice.description}
-                </Paragraph>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </Container>
   </Section>

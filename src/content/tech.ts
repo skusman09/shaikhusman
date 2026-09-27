@@ -47,6 +47,7 @@ export const tech: TechGroup[] = [
   {
     category: 'Architecture & System Design',
     items: [
+      { name: 'Microservices Architecture', primary: true },
       { name: 'Multi-tenant Architecture', primary: true },
       { name: 'Modular Monolith' },
       { name: 'Layered Architecture' },

@@ -56,6 +56,11 @@ export const practices: Practice[] = [
     description: 'Organise code into clear layers: router → service → repository. This enables isolated testing, safe refactoring, and feature reuse.',
   },
   {
+    id: 'distributed-systems',
+    title: 'Distributed Systems & Microservices',
+    description: 'Design decoupled service architectures with pragmatic trade-offs. Extract shared business logic and schemas into pip-installable internal libraries to eliminate data drift across microservices.',
+  },
+  {
     id: 'documentation',
     title: 'Engineering Documentation',
     description: 'Document architectural decisions and API contracts. Treat future engineers as the primary audience to reduce onboarding friction.',
