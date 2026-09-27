@@ -1,5 +1,6 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
 import { Heading } from '@/components/ui/Heading';
@@ -18,7 +19,12 @@ import {
   tech, 
   techSection, 
   practices, 
-  practicesSection 
+  practicesSection,
+  education,
+  educationSection,
+  certifications,
+  researchPapers,
+  social
 } from '@/content';
 ---
 
@@ -28,17 +34,17 @@ import {
   <Hero />
 
   {/* PROFESSIONAL EXPERIENCE SECTION */}
-  <Section id="experience" className="bg-surface/30 border-y border-border/40 py-24 md:py-32">
+  <Section id="experience" className="bg-surface/20 border-y border-border/40 py-10 md:py-20">
     <Container>
-      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">{experienceSection.title}</Heading>
-      <Paragraph size="lg" muted className="mb-20 max-w-3xl leading-relaxed">
-        {experienceSection.description}
+      <Heading as="h2" size="4xl" className="mb-4 md:mb-6 tracking-tight">{experienceSection.title}</Heading>
+      <Paragraph size="lg" muted className="mb-10 md:mb-12 max-w-3xl leading-relaxed">
+        Since April 2024, I have operated as a core Backend Software Engineer at <a href="https://suflon.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-medium">Suflon Tech LLP</a>. My experience spans building reusable multi-tenant platforms, delivering enterprise consulting solutions, and creating internal automation tools—all unified by a focus on scalable architecture and engineering excellence.
       </Paragraph>
 
-      <div class="flex flex-col gap-32">
+      <div class="flex flex-col gap-12 md:gap-20">
         
         {/* TIMELINE LAYOUT: Engineering Journey */}
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8 md:gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{journeySection.title}</Heading>
           <div class="relative pl-8 md:pl-0 border-l border-border/50 md:border-none">
             {/* Desktop Timeline Line */}
@@ -50,7 +56,7 @@ import {
                 {/* Left Side: Title */}
                 <div class="md:w-[11.5rem] flex-shrink-0 pt-2 md:pr-8 relative">
                   {/* Mobile Dot */}
-                  <div class="md:hidden absolute top-3.5 -left-[37px] w-2 h-2 bg-accent rounded-full ring-4 ring-background" />
+                  <div class="md:hidden absolute top-3.5 -left-[36px] w-2 h-2 bg-accent rounded-full ring-4 ring-background" />
                   
                   <span class="text-sm font-semibold text-muted block md:text-right">{phase.title}</span>
                 </div>
@@ -94,27 +100,27 @@ import {
         </div>
 
         {/* PROFESSIONAL EXPERIENCE CARDS */}
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8 md:gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.productEngineeringHeading}</Heading>
           
           <div class="grid gap-8 md:grid-cols-2 items-start">
             {experience.filter(e => e.category === 'Product Engineering').map((item) => (
-              <ExpandableCard client:visible item={item} variant="product" />
+              <ExpandableCard key={item.id} client:visible item={item} variant="product" />
             ))}
           </div>
 
           {/* Render Enterprise Consulting items under the same visual section */}
           {experience.filter(e => e.category === 'Enterprise Consulting').map((item) => (
-            <ExpandableCard client:visible item={item} variant="consulting" />
+            <ExpandableCard key={item.id} client:visible item={item} variant="product" />
           ))}
         </div>
 
         {/* INTERNAL TOOL CARDS: Internal Engineering */}
-        <div class="flex flex-col gap-12">
+        <div class="flex flex-col gap-8 md:gap-12">
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.internalEngineeringHeading}</Heading>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {experience.filter(e => e.category === 'Internal Engineering').map((item) => (
-              <ExpandableCard client:visible item={item} variant="internal" />
+              <ExpandableCard key={item.id} client:visible item={item} variant="internal" />
             ))}
           </div>
         </div>
@@ -124,34 +130,33 @@ import {
   </Section>
 
   {/* PERSONAL PROJECTS SECTION */}
-  <Section id="projects" className="py-24 md:py-32">
+  <Section id="projects" className="py-10 md:py-20">
     <Container>
-      <Heading as="h2" size="4xl" className="mb-6 tracking-tight">{projectsSection.title}</Heading>
-      <Paragraph size="lg" muted className="mb-20 max-w-3xl leading-relaxed">
+      <Heading as="h2" size="4xl" className="mb-4 md:mb-6 tracking-tight">{projectsSection.title}</Heading>
+      <Paragraph size="lg" muted className="mb-10 md:mb-12 max-w-3xl leading-relaxed">
         {projectsSection.description}
       </Paragraph>
 
-      <div class="grid gap-12 lg:grid-cols-2 items-stretch">
+      <div class="grid gap-8 lg:grid-cols-2 items-stretch">
         {projects.map((project) => (
-          <ExpandableCard client:visible item={project} variant="personal" />
+          <ExpandableCard key={project.id} client:visible item={project} variant="personal" />
         ))}
       </div>
     </Container>
   </Section>
 
   {/* TECH / ENGINEERING STACK SECTION */}
-  <Section id="tech" className="bg-surface/30 border-t border-border/40 py-24 md:py-32">
+  <Section id="tech" className="bg-surface/20 border-y border-border/40 py-10 md:py-20">
     <Container>
-      <div class="flex flex-col gap-4 mb-16">
+      <div class="flex flex-col gap-3 mb-10 md:mb-12">
         <Heading as="h2" size="4xl" className="tracking-tight">{techSection.title}</Heading>
         <Paragraph size="lg" muted className="max-w-2xl leading-relaxed">{techSection.subtitle}</Paragraph>
       </div>
-      <div class="grid gap-5 lg:grid-cols-2 items-start">
+      <div class="grid gap-5 lg:grid-cols-2 items-stretch">
         {tech.map((group) => {
-          const isSupportingFrontend = group.category === 'Supporting Frontend Technologies';
           return (
-            <div class={`flex flex-col gap-5 p-6 md:p-7 rounded-2xl border transition-colors duration-200 ${isSupportingFrontend ? 'border-border/25 bg-background/30 hover:border-border/40 opacity-70 hover:opacity-90' : 'border-border/40 bg-background/50 hover:border-border/70'}`}>
-              <span class={`text-xs font-semibold uppercase tracking-widest ${isSupportingFrontend ? 'text-muted/60' : 'text-accent/70'}`}>{group.category}</span>
+            <div key={group.category} class="flex flex-col h-full gap-5 p-6 md:p-7 rounded-2xl border transition-colors duration-200 shadow-sm border-border/70 bg-surface/95 hover:border-border">
+              <span class="text-xs font-semibold uppercase tracking-widest text-accent/80">{group.category}</span>
               <div class="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   item.primary ? (
@@ -173,15 +178,115 @@ import {
   </Section>
 
 
+  {/* EDUCATION & RESEARCH SECTION */}
+  <Section id="education" className="py-10 md:py-20 reveal-on-scroll">
+    <Container>
+      <div class="flex flex-col gap-10 md:gap-16">
+        <div class="flex flex-col gap-3">
+          <Heading as="h2" size="4xl" className="tracking-tight">{educationSection.title}</Heading>
+          <Paragraph size="lg" muted className="max-w-2xl leading-relaxed">{educationSection.description}</Paragraph>
+        </div>
+        
+        {/* Academic Background - Horizontal */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="2xl" className="tracking-tight">Academic Background</Heading>
+          <div class="grid md:grid-cols-2 gap-6 items-stretch">
+            {education.map((edu) => (
+              <Card key={edu.id} className="p-6 md:p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+                <div class="flex flex-col gap-2 mb-4">
+                  <h4 class="text-xl font-bold text-primary">{edu.degree}</h4>
+                  <div class="flex flex-wrap items-center gap-2 text-muted text-sm">
+                    <span class="font-medium text-accent">{edu.institution}</span>
+                    <span class="hidden sm:inline">&bull;</span>
+                    <span>{edu.graduationYear}</span>
+                  </div>
+                </div>
+                {edu.highlights && edu.highlights.length > 0 && (
+                  <ul class="list-disc pl-5 space-y-2 text-muted text-sm leading-relaxed flex-1">
+                    {edu.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                  </ul>
+                )}
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Academic Research - 2 columns */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="2xl" className="tracking-tight">Academic Research</Heading>
+          <div class="grid md:grid-cols-2 gap-6">
+            {researchPapers.map((paper) => (
+              <Card key={paper.id} className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col h-full group bg-surface/40 hover:bg-surface/60">
+                <div class="flex flex-col gap-2 mb-4">
+                  <h4 class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{paper.title}</h4>
+                  <div class="flex items-center gap-2 text-muted text-sm">
+                    <span class="font-medium text-accent">{paper.issuer}</span>
+                    <span>&bull;</span>
+                    <span>{paper.date}</span>
+                  </div>
+                </div>
+                {/* 2 lines visible */}
+                <Paragraph size="sm" muted className="leading-relaxed line-clamp-2 mb-6 flex-1" title={paper.description}>
+                  {paper.description}
+                </Paragraph>
+                
+                <div class="flex items-center gap-3 pt-5 border-t border-border/40 mt-auto">
+                  {paper.certificate && (
+                    <a href={paper.certificate} target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-muted hover:text-accent border border-border/50 px-3 py-1.5 rounded-md hover:border-accent/40 transition-colors">
+                      Certificate
+                    </a>
+                  )}
+                  {(paper.link || paper.paper) && (
+                    <a href={paper.link || paper.paper} target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-accent hover:text-accent/80 transition-colors ml-auto flex items-center gap-1 group-hover:underline">
+                      View Publication
+                    </a>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications (Java) */}
+        <div class="flex flex-col gap-8">
+          <Heading as="h3" size="2xl" className="tracking-tight">Certifications</Heading>
+          <div class="grid gap-6">
+            {certifications.map((cert) => (
+              <Card key={cert.id} className="p-6 md:p-8 hover:scale-[1.01] transition-transform duration-300 flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-center">
+                <div class="flex flex-col gap-2 flex-1">
+                  <h4 class="text-xl font-bold text-primary">{cert.title}</h4>
+                  <div class="flex items-center gap-2 text-muted text-sm mb-2">
+                    <span class="font-medium text-accent">{cert.issuer}</span>
+                    <span>&bull;</span>
+                    <span>{cert.date}</span>
+                  </div>
+                  <Paragraph size="sm" muted className="leading-relaxed">
+                    {cert.description}
+                  </Paragraph>
+                </div>
+                {cert.certificate && (
+                  <a href={cert.certificate} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-surface border border-border/50 text-primary font-medium transition-colors hover:border-border hover:bg-surface/80 flex-shrink-0 text-sm whitespace-nowrap">
+                    View Certificate
+                  </a>
+                )}
+              </Card>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </Container>
+  </Section>
+
   {/* ENGINEERING PRACTICES SECTION */}
-  <Section id="practices" className="py-24 md:py-32">
+  <Section id="practices" className="bg-surface/20 py-10 md:py-20 border-t border-border/40">
     <Container>
       <div class="flex flex-col gap-12">
         <Heading as="h2" size="4xl" className="tracking-tight">{practicesSection.title}</Heading>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {practices.map((practice) => (
-            <div class="flex flex-col gap-3 group p-5 md:p-6 rounded-2xl border border-border/40 bg-surface/30 hover:border-border transition-colors">
-              <div class="h-10 w-10 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 transition-colors">
+            <div class="flex flex-col gap-3 group p-5 md:p-6 rounded-2xl border border-border/70 bg-surface/80 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+              <div class="h-10 w-10 bg-background border border-border/50 rounded-xl flex items-center justify-center group-hover:border-accent/50 group-hover:scale-110 transition-all duration-300">
                 <span class="text-accent text-lg">✦</span>
               </div>
               <div class="flex flex-col gap-2">
@@ -197,4 +302,40 @@ import {
     </Container>
   </Section>
 
+
+
 </PageLayout>
+
+<style is:global>
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // Stop observing once visible
+        }
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -50px 0px" });
+
+    document.querySelectorAll('.reveal-on-scroll, section').forEach((el) => {
+      // Add class if not present
+      if(!el.classList.contains('reveal-on-scroll')) {
+          el.classList.add('reveal-on-scroll');
+      }
+      observer.observe(el);
+    });
+  });
+</script>

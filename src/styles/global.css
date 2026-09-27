@@ -40,9 +40,9 @@
 
   [data-theme='dark'] {
     /* Dark Theme Palette */
-    --color-background: #0A0A0A;
-    --color-surface: #111111;
-    --color-border: #262626;
+    --color-background: #09090B;
+    --color-surface: #18181B;
+    --color-border: #27272A;
     --color-primary: #FAFAFA;
     --color-secondary: #A1A1AA;
     --color-accent: #2563EB;
@@ -54,6 +54,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -67,5 +68,37 @@
 
   ::selection {
     @apply bg-accent/30 text-primary;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+
+  /* Modal Animations */
+  @keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes modalZoomIn {
+    from { opacity: 0; transform: scale(0.97) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .animate-modal-backdrop {
+    animation: modalFadeIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  .animate-modal-content {
+    animation: modalZoomIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
 }

@@ -120,3 +120,21 @@ export interface SEOMetadata {
   ogImage: string;
   author: string;
 }
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  graduationYear: string;
+  highlights: string[];
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  certificate?: string;
+}
+

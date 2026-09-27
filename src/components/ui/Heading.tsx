@@ -32,10 +32,10 @@ export function Heading({
     base: 'text-base',
     lg: 'text-lg',
     xl: 'text-xl',
-    '2xl': 'text-2xl',
-    '3xl': 'text-3xl md:text-4xl',
-    '4xl': 'text-4xl md:text-5xl lg:text-6xl',
-    '5xl': 'text-5xl md:text-6xl lg:text-7xl',
+    '2xl': 'text-xl md:text-2xl',
+    '3xl': 'text-2xl md:text-3xl lg:text-4xl',
+    '4xl': 'text-3xl md:text-4xl lg:text-5xl',
+    '5xl': 'text-4xl md:text-5xl lg:text-6xl',
   };
 
   return (

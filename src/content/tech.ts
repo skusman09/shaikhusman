@@ -11,6 +11,7 @@ export const tech: TechGroup[] = [
     items: [
       { name: 'Python', primary: true },
       { name: 'FastAPI', primary: true },
+      { name: 'Spring Boot', primary: true },
       { name: 'SQLAlchemy', primary: true },
       { name: 'Pydantic' },
       { name: 'Alembic' },
@@ -37,7 +38,7 @@ export const tech: TechGroup[] = [
       { name: 'Linux / Ubuntu' },
       { name: 'Nginx' },
       { name: 'Traefik' },
-      { name: 'Cloudflare' },
+      { name: 'Cloudflare / Render', primary: true },
       { name: 'AWS EC2' },
       { name: 'AWS S3' },
       { name: 'VPS Hosting' },

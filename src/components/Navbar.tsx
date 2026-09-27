@@ -95,7 +95,27 @@ function MobileDrawer({
                     ? "bg-surface text-primary"
                     : "text-muted hover:bg-surface/60 hover:text-primary"
                 )}
-                onClick={onClose}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onClose();
+                  
+                  // Wait for the drawer to close and body overflow to unlock
+                  setTimeout(() => {
+                    const targetId = item.href.replace('#', '');
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                      // 80px offset for the sticky navbar
+                      const offset = 80;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.scrollY - offset;
+                      
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                      });
+                    }
+                  }, 50);
+                }}
               >
                 <span>{item.label}</span>
                 <ArrowRight
@@ -167,7 +187,6 @@ export function Navbar() {
 
   const close = () => {
     setIsOpen(false);
-    toggleBtnRef.current?.focus();
   };
 
   return (
@@ -180,7 +199,13 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-2 font-heading text-xl font-bold tracking-tighter text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
               aria-label="Home"
-              onClick={close}
+              onClick={(e) => {
+                if (window.location.pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                close();
+              }}
             >
               {logo}
             </a>

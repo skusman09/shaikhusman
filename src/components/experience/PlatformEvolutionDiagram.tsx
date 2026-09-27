@@ -90,8 +90,8 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
         <div className="h-8" /> {/* Spacer for arrow heads */}
       </div>
 
-      {/* 4. Domain Products */}
-      <div className="flex flex-col md:grid md:grid-cols-3 gap-6 w-full max-w-5xl md:mt-2">
+      {/* 4. Domain Products (Desktop) */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6 w-full max-w-5xl mt-2">
         {extensions.map((ext) => (
           <Card
             key={ext.name}
@@ -107,6 +107,35 @@ export function PlatformEvolutionDiagram({ className }: { className?: string }) 
                 <span
                   key={chip}
                   className="px-2.5 py-1 text-[11px] font-semibold rounded-md border border-neutral-300 dark:border-white/15 bg-neutral-100 dark:bg-surface text-neutral-800 dark:text-white/90"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      {/* 4. Domain Products (Mobile) */}
+      <div className="md:hidden w-full flex flex-col gap-4 p-4 rounded-xl border-2 border-dashed border-neutral-300 dark:border-white/20 bg-neutral-50/50 dark:bg-surface/10 relative">
+        <span className="text-[10px] font-bold text-center text-muted uppercase tracking-widest absolute -top-2.5 left-1/2 -translate-x-1/2 bg-[#F5F5F5] dark:bg-zinc-950 px-2">
+          Parallel Products
+        </span>
+        {extensions.map((ext) => (
+          <Card
+            key={ext.name}
+            className="flex flex-col p-5 border border-neutral-300 dark:border-white/20 bg-white dark:bg-surface/30 shadow-sm"
+          >
+            <div className="flex flex-col items-center text-center">
+              <h4 className="font-bold text-base text-primary">{ext.name}</h4>
+              <span className="text-xs font-medium text-muted mt-1 mb-4">{ext.domain}</span>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-1.5 mt-auto">
+              {ext.chips.map((chip) => (
+                <span
+                  key={chip}
+                  className="px-2 py-0.5 text-[10px] font-semibold rounded-md border border-neutral-300 dark:border-white/15 bg-neutral-100 dark:bg-surface text-neutral-800 dark:text-white/90"
                 >
                   {chip}
                 </span>

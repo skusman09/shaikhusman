@@ -9,3 +9,4 @@ export * from './navigation';
 export * from './social';
 export * from './seo';
 export * from './resume';
+export * from './education';

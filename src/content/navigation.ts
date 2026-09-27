@@ -6,5 +6,6 @@ export const navigation: NavigationItem[] = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Tech', href: '#tech' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Education', href: '#education' },
+  { label: 'Practices', href: '#practices' },
 ];
