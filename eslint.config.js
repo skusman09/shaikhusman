@@ -7,6 +7,6 @@ export default [
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
-    ignores: ['dist/', 'node_modules/', '.astro/', 'src/env.d.ts'],
+    ignores: ['dist/', 'node_modules/', '.astro/', 'src/env.d.ts', 'check.js', 'crop.js'],
   },
 ];

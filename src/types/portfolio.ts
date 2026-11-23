@@ -138,3 +138,13 @@ export interface CertificationItem {
   certificate?: string;
 }
 
+export interface ResearchPaperItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+  certificate?: string;
+  link?: string;
+}
+

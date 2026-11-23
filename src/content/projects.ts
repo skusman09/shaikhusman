@@ -7,6 +7,45 @@ export const projectsSection = {
 
 export const projects: Project[] = [
   {
+    id: 'lib-mgmt-saas',
+    title: 'LibraOne — AI-Powered Multi-Tenant Library SaaS',
+    link: 'https://libraone.pages.dev/',
+    description: 'Enterprise multi-tenant library management SaaS featuring Corrective RAG (CRAG) with LangGraph, on-device Edge ML document scanning via LiteRT.js & OpenCV.js WASM, pessimistic concurrency circulation, and Razorpay recurring subscriptions.',
+    technologies: [
+      'FastAPI',
+      'PostgreSQL (pgvector)',
+      'LangGraph',
+      'LangChain Core',
+      'LangSmith',
+      'Google LiteRT.js',
+      'OpenCV.js WASM',
+      'Redis',
+      'React 18',
+      'Razorpay',
+      'Cloudflare R2',
+      'Docker'
+    ],
+    businessContext: 'Modernizes physical library operations for multi-tenant residential societies and campuses, providing 1-click circulation, automated late fine calculations, real-time stock audits, and self-serve AI book discovery with zero recurring server-side vision API costs.',
+    responsibilities: [
+      'Architected a partition-scoped multi-tenant backend with FastAPI, SQLAlchemy 2.0 (AsyncIO), and Redis token bucket rate limiting with tenant-scoped isolation.',
+      'Engineered an Adaptive Corrective RAG (CRAG) state machine using LangGraph and LangChain Core with query rewriting, pgvector HNSW cosine search, and LangSmith observability.',
+      'Implemented an on-device Edge ML document scanner using Google LiteRT.js (TFLite WASM/WebGPU) and OpenCV.js WASM for 30+ FPS perspective unwarping and barcode detection with zero cloud inference costs.',
+      'Designed a concurrency-safe circulation engine using row-level pessimistic locking (SELECT ... FOR UPDATE) to prevent double-checkout race conditions on physical copies.',
+      'Built automated batch catalog ingestion with multi-source fallback (Open Library, Google Books) and Razorpay recurring subscription billing with webhook reconciliation.'
+    ],
+    architecture: 'Partition-scoped Multi-Tenant Monolith with asynchronous background supervisor loops, PostgreSQL pgvector (1536-dim HNSW cosine ops), client-side Web Worker tensor inference, and an idempotent multi-provider LLM cascade with circuit breaking (Groq, Gemini, SambaNova, BytePlus, OpenRouter).',
+    engineeringDecisions: [
+      'Implemented client-side LiteRT.js + OpenCV.js instead of cloud vision APIs to eliminate recurring OCR costs and maintain sub-second scan speeds.',
+      'Used row-level pessimistic locking (SELECT FOR UPDATE) on physical book copies to guarantee inventory consistency under concurrent librarian checkouts.',
+      'Built a multi-provider LLM cascade with circuit-breaking and automatic failover to prevent vendor downtime.',
+      'Adopted SHA-256 request fingerprinting with 24-hour sessionStorage idempotency keys to prevent duplicate billing or imports during transient network failures.'
+    ],
+    keyLearnings: [
+      'Cyclical state machines in LangGraph with grading gates drastically improve domain search retrieval precision compared to traditional linear RAG chains.',
+      'Offloading heavy image tensor normalization and OpenCV homography transforms to a dedicated Web Worker is critical to preserving a smooth 30+ FPS camera viewfinder on mobile devices.'
+    ]
+  },
+  {
     id: 'staffone',
     title: 'StaffOne Workforce Management',
     link: 'https://staffoneportal.pages.dev/',
@@ -19,19 +58,6 @@ export const projects: Project[] = [
       'Implemented background job queues (Redis/RQ) for asynchronous tasks like PDF slip generation.'
     ],
     architecture: 'Layered Modular Monolith with Repository pattern to ensure a highly testable codebase decoupled from the database.'
-  },
-  {
-    id: 'lib-mgmt-saas',
-    title: 'Library Management SaaS',
-    link: 'https://lib-mgmt-frontend.pages.dev/',
-    description: 'A multi-tenant SaaS platform for modern libraries featuring barcode-scanning workflows and real-time inventory.',
-    technologies: ['FastAPI', 'React', 'Tailwind CSS', 'SQLAlchemy', 'PostgreSQL'],
-    businessContext: 'Streamlines book management and checkout processes for multiple independent educational institutions from a single unified architecture.',
-    responsibilities: [
-      'Engineered a multi-tenant PostgreSQL backend ensuring strict data isolation between organizations.',
-      'Designed a highly responsive barcode-friendly REST API to minimize latency during high-volume checkouts.'
-    ],
-    architecture: 'Schema-based Multi-tenancy in PostgreSQL to securely isolate data while sharing the compute layer.'
   },
   {
     id: 'resource-booking-system',

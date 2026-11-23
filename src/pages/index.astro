@@ -1,6 +1,5 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons';
 import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
 import { Heading } from '@/components/ui/Heading';
@@ -23,8 +22,7 @@ import {
   education,
   educationSection,
   certifications,
-  researchPapers,
-  social
+  researchPapers
 } from '@/content';
 ---
 
@@ -105,13 +103,13 @@ import {
           
           <div class="grid gap-8 md:grid-cols-2 items-start">
             {experience.filter(e => e.category === 'Product Engineering').map((item) => (
-              <ExpandableCard key={item.id} client:visible item={item} variant="product" />
+              <ExpandableCard client:visible item={item} variant="product" />
             ))}
           </div>
 
           {/* Render Enterprise Consulting items under the same visual section */}
           {experience.filter(e => e.category === 'Enterprise Consulting').map((item) => (
-            <ExpandableCard key={item.id} client:visible item={item} variant="product" />
+            <ExpandableCard client:visible item={item} variant="product" />
           ))}
         </div>
 
@@ -120,7 +118,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">{experienceSection.internalEngineeringHeading}</Heading>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
             {experience.filter(e => e.category === 'Internal Engineering').map((item) => (
-              <ExpandableCard key={item.id} client:visible item={item} variant="internal" />
+              <ExpandableCard client:visible item={item} variant="internal" />
             ))}
           </div>
         </div>
@@ -163,7 +161,7 @@ import {
       <div class="grid gap-5 lg:grid-cols-2 items-stretch">
         {tech.map((group) => {
           return (
-            <div key={group.category} class="flex flex-col h-full gap-5 p-6 md:p-7 rounded-2xl border transition-colors duration-200 shadow-sm border-border/70 bg-surface/95 hover:border-border">
+            <div class="flex flex-col h-full gap-5 p-6 md:p-7 rounded-2xl border transition-colors duration-200 shadow-sm border-border/70 bg-surface/95 hover:border-border">
               <span class="text-xs font-semibold uppercase tracking-widest text-accent/80">{group.category}</span>
               <div class="flex flex-wrap gap-2">
                 {group.items.map((item) => (
@@ -195,7 +193,7 @@ import {
 
       <div class="grid gap-8 lg:grid-cols-2 items-stretch">
         {projects.map((project) => (
-          <ExpandableCard key={project.id} client:visible item={project} variant="personal" />
+          <ExpandableCard client:visible item={project} variant="personal" />
         ))}
       </div>
     </Container>
@@ -216,7 +214,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">Academic Background</Heading>
           <div class="grid md:grid-cols-2 gap-6 items-stretch">
             {education.map((edu) => (
-              <Card key={edu.id} className="p-6 md:p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+              <Card className="p-6 md:p-8 flex flex-col h-full hover:shadow-md transition-shadow">
                 <div class="flex flex-col gap-2 mb-4">
                   <h4 class="text-xl font-bold text-primary">{edu.degree}</h4>
                   <div class="flex flex-wrap items-center gap-2 text-muted text-sm">
@@ -227,7 +225,7 @@ import {
                 </div>
                 {edu.highlights && edu.highlights.length > 0 && (
                   <ul class="list-disc pl-5 space-y-2 text-muted text-sm leading-relaxed flex-1">
-                    {edu.highlights.map((h, i) => <li key={i}>{h}</li>)}
+                    {edu.highlights.map((h) => <li>{h}</li>)}
                   </ul>
                 )}
               </Card>
@@ -240,7 +238,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">Academic Research</Heading>
           <div class="grid md:grid-cols-2 gap-6">
             {researchPapers.map((paper) => (
-              <Card key={paper.id} className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col h-full group bg-surface/40 hover:bg-surface/60">
+              <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col h-full group bg-surface/40 hover:bg-surface/60">
                 <div class="flex flex-col gap-2 mb-4">
                   <h4 class="text-lg font-bold text-primary group-hover:text-accent transition-colors">{paper.title}</h4>
                   <div class="flex items-center gap-2 text-muted text-sm">
@@ -260,8 +258,8 @@ import {
                       Certificate
                     </a>
                   )}
-                  {(paper.link || paper.paper) && (
-                    <a href={paper.link || paper.paper} target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-accent hover:text-accent/80 transition-colors ml-auto flex items-center gap-1 group-hover:underline">
+                  {paper.link && (
+                    <a href={paper.link} target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-accent hover:text-accent/80 transition-colors ml-auto flex items-center gap-1 group-hover:underline">
                       View Publication
                     </a>
                   )}
@@ -276,7 +274,7 @@ import {
           <Heading as="h3" size="2xl" className="tracking-tight">Certifications</Heading>
           <div class="grid gap-6">
             {certifications.map((cert) => (
-              <Card key={cert.id} className="p-6 md:p-8 hover:scale-[1.01] transition-transform duration-300 flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-center">
+              <Card className="p-6 md:p-8 hover:scale-[1.01] transition-transform duration-300 flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-center">
                 <div class="flex flex-col gap-2 flex-1">
                   <h4 class="text-xl font-bold text-primary">{cert.title}</h4>
                   <div class="flex items-center gap-2 text-muted text-sm mb-2">

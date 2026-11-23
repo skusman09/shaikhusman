@@ -1,4 +1,4 @@
-import type { CertificationItem, EducationItem } from '@/types/portfolio';
+import type { CertificationItem, EducationItem, ResearchPaperItem } from '@/types/portfolio';
 
 export const educationSection = {
   title: 'Education',
@@ -33,7 +33,7 @@ export const certifications: CertificationItem[] = [
   }
 ];
 
-export const researchPapers = [
+export const researchPapers: ResearchPaperItem[] = [
   {
     id: 'research-irjmets',
     title: 'Advancing Marine Species Recognition',
