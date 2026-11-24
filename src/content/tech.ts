@@ -24,6 +24,7 @@ export const tech: TechGroup[] = [
     category: 'Data & Messaging',
     items: [
       { name: 'PostgreSQL', primary: true },
+      { name: 'pgvector (HNSW Indexing)', primary: true },
       { name: 'Redis', primary: true },
       { name: 'RabbitMQ', primary: true },
       { name: 'MySQL' },
@@ -51,6 +52,7 @@ export const tech: TechGroup[] = [
       { name: 'Multi-tenant Architecture', primary: true },
       { name: 'Modular Monolith' },
       { name: 'Layered Architecture' },
+      { name: 'Corrective RAG (CRAG)', primary: true },
       { name: 'REST API Design' },
       { name: 'Event-Driven Design' },
       { name: 'Background Jobs & Queues' },
@@ -70,6 +72,9 @@ export const tech: TechGroup[] = [
   {
     category: 'Automation & Integrations',
     items: [
+      { name: 'LangGraph & LangChain', primary: true },
+      { name: 'LangSmith Observability' },
+      { name: 'Razorpay Subscriptions' },
       { name: 'Playwright' },
       { name: 'Browser Automation' },
       { name: 'Data Acquisition' },
@@ -86,6 +91,7 @@ export const tech: TechGroup[] = [
       { name: 'TypeScript' },
       { name: 'Astro' },
       { name: 'TailwindCSS' },
+      { name: 'LiteRT.js & OpenCV.js WASM' },
     ],
   },
   {

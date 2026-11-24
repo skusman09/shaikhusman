@@ -2,7 +2,7 @@ import type { Project } from '@/types/portfolio';
 
 export const projectsSection = {
   title: 'Personal Projects',
-  description: 'Independent exploration into cloud infrastructure, deployment, and backend architectures. These projects exist outside of professional work — to learn by building and deploying real systems.',
+  description: 'Independent exploration into distributed backend architectures, agentic AI systems, and cloud infrastructure. These projects exist outside of professional work — to learn by building, benchmarking, and deploying real-world production systems.',
 };
 
 export const projects: Project[] = [
@@ -13,6 +13,7 @@ export const projects: Project[] = [
     description: 'Enterprise multi-tenant library management SaaS featuring Corrective RAG (CRAG) with LangGraph, on-device Edge ML document scanning via LiteRT.js & OpenCV.js WASM, pessimistic concurrency circulation, and Razorpay recurring subscriptions.',
     technologies: [
       'FastAPI',
+      'SQLAlchemy 2.0',
       'PostgreSQL (pgvector)',
       'LangGraph',
       'LangChain Core',
@@ -31,7 +32,8 @@ export const projects: Project[] = [
       'Engineered an Adaptive Corrective RAG (CRAG) state machine using LangGraph and LangChain Core with query rewriting, pgvector HNSW cosine search, and LangSmith observability.',
       'Implemented an on-device Edge ML document scanner using Google LiteRT.js (TFLite WASM/WebGPU) and OpenCV.js WASM for 30+ FPS perspective unwarping and barcode detection with zero cloud inference costs.',
       'Designed a concurrency-safe circulation engine using row-level pessimistic locking (SELECT ... FOR UPDATE) to prevent double-checkout race conditions on physical copies.',
-      'Built automated batch catalog ingestion with multi-source fallback (Open Library, Google Books) and Razorpay recurring subscription billing with webhook reconciliation.'
+      'Built automated batch catalog ingestion with multi-source fallback (Open Library, Google Books) and Razorpay recurring subscription billing with webhook reconciliation.',
+      'Implemented an asynchronous background supervisor daemon for daily overdue fine calculations and queued SMTP email notifications.'
     ],
     architecture: 'Partition-scoped Multi-Tenant Monolith with asynchronous background supervisor loops, PostgreSQL pgvector (1536-dim HNSW cosine ops), client-side Web Worker tensor inference, and an idempotent multi-provider LLM cascade with circuit breaking (Groq, Gemini, SambaNova, BytePlus, OpenRouter).',
     engineeringDecisions: [
@@ -57,7 +59,14 @@ export const projects: Project[] = [
       'Engineered complex domain logic for overlapping leave validation and an automated monthly payroll engine.',
       'Implemented background job queues (Redis/RQ) for asynchronous tasks like PDF slip generation.'
     ],
-    architecture: 'Layered Modular Monolith with Repository pattern to ensure a highly testable codebase decoupled from the database.'
+    architecture: 'Layered Modular Monolith with Repository pattern to ensure a highly testable codebase decoupled from the database.',
+    engineeringDecisions: [
+      'Chose a Modular Monolith over microservices to eliminate distributed transaction overhead while keeping domain boundaries clean.',
+      'Adopted Redis and RQ for asynchronous task processing to maintain minimal operational overhead compared to heavy message brokers.'
+    ],
+    keyLearnings: [
+      'Timezone-aware attendance tracking requires strict UTC normalization at the database layer with localized presentation at the frontend boundary.'
+    ]
   },
   {
     id: 'resource-booking-system',
@@ -71,7 +80,14 @@ export const projects: Project[] = [
       'Implemented explicit state transition workflows (PENDING, CONFIRMED, CANCELLED) with strict business validation.',
       'Secured the platform with stateless JWT authentication and differentiated ADMIN/USER role access.'
     ],
-    architecture: '12-Factor App methodology following classic Spring Boot controller-service-repository patterns.'
+    architecture: '12-Factor App methodology following classic Spring Boot controller-service-repository patterns.',
+    engineeringDecisions: [
+      'Leveraged Spring Data JPA Specifications for dynamic multi-criteria queries to avoid brittle native SQL concatenation.',
+      'Applied database-level pessimistic locking during slot confirmation to eliminate race conditions and double-booking.'
+    ],
+    keyLearnings: [
+      'Modeling booking states as an explicit finite state machine prevents illegal status transitions and reduces defensive business check clutter.'
+    ]
   },
   {
     id: 'payment-service-poc',
@@ -84,7 +100,14 @@ export const projects: Project[] = [
       'Implemented a custom 3-state Circuit Breaker (CLOSED, OPEN, HALF_OPEN) with async locks.',
       'Configured Celery and Redis to handle asynchronous background processing of payment state transitions.'
     ],
-    architecture: 'Strict Idempotency via database constraints and Pessimistic Locking (SELECT FOR UPDATE SKIP LOCKED) to guarantee At-Least-Once Delivery without duplicates.'
+    architecture: 'Strict Idempotency via database constraints and Pessimistic Locking (SELECT FOR UPDATE SKIP LOCKED) to guarantee At-Least-Once Delivery without duplicates.',
+    engineeringDecisions: [
+      'Implemented an asynchronous 3-state circuit breaker to fast-fail transactions during downstream payment gateway outages.',
+      'Used SELECT FOR UPDATE SKIP LOCKED in background consumer workers to achieve conflict-free concurrent payment processing.'
+    ],
+    keyLearnings: [
+      'True financial transaction idempotency requires pairing unique idempotency key constraints with atomic distributed lock acquisition in Redis.'
+    ]
   },
   {
     id: 'gesture-draw',
