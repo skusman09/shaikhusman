@@ -10,7 +10,7 @@ export const hero: HeroContent = {
   cta: {
     primary: {
       label: 'Download Resume',
-      href: '/resume.pdf',
+      href: '/documents/resume.pdf',
     },
     secondary: {
       label: 'View GitHub',
