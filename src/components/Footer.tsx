@@ -23,7 +23,7 @@ export function Footer() {
             <a href="https://github.com/skusman09" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors p-2 rounded-full hover:bg-surface border border-transparent hover:border-border/40" aria-label="GitHub">
               <GithubIcon className="w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/in/mohammed-usman-shaikh/" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors p-2 rounded-full hover:bg-surface border border-transparent hover:border-border/40" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/shaikh-usman" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors p-2 rounded-full hover:bg-surface border border-transparent hover:border-border/40" aria-label="LinkedIn">
               <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
