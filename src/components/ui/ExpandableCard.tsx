@@ -4,8 +4,8 @@ import { cn } from '@/lib/cn';
 import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
 import type { ExperienceItem, Project } from '@/types/portfolio';
-import { X, ExternalLink, Users, CreditCard, BookOpen, CalendarDays, Palette, Pizza, ArrowRight } from 'lucide-react';
-import { GithubIcon } from '@/components/ui/BrandIcons';
+import { X, ExternalLink, Users, CreditCard, CalendarDays, Palette, Pizza, ArrowRight } from 'lucide-react';
+import { GithubIcon, AILibraryIcon } from '@/components/ui/BrandIcons';
 
 interface ExpandableCardProps {
   item: Partial<ExperienceItem & Project>;
@@ -136,37 +136,6 @@ function ProjectModal({ item, isOpen, onClose }: { item: Partial<ExperienceItem 
 
 const BASE = 'rounded-2xl border border-border/70 bg-surface/95 shadow-sm transition-all duration-300 hover:shadow-md hover:border-border group flex flex-col h-full';
 
-function LibraryBuildingIcon({ className, strokeWidth = 1 }: { className?: string; strokeWidth?: number | string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      {/* Spacious, Clean Roof */}
-      <path d="m3 7.5 9-5 9 5" />
-      <path d="M4 7.5h16" />
-
-      {/* Clean Single-Line Pillars */}
-      <path d="M5.5 7.5v10.5" />
-      <path d="M18.5 7.5v10.5" />
-
-      {/* Foundation Base */}
-      <path d="M4 18h16" />
-      <path d="M2 21h20" />
-
-      {/* Spacious Open Book in Center */}
-      <path d="M8.5 11.5h2a1.5 1.5 0 0 1 1.5 1.5V16a1 1 0 0 0-1-1h-2.5z" />
-      <path d="M15.5 11.5h-2a1.5 1.5 0 0 0-1.5 1.5V16a1 1 0 0 1 1-1h2.5z" />
-    </svg>
-  );
-}
-
 export function ExpandableCard({ item, variant, className }: ExpandableCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -236,7 +205,7 @@ export function ExpandableCard({ item, variant, className }: ExpandableCardProps
     let ProjectIcon = CreditCard;
     if (item.id === 'staffone') ProjectIcon = Users;
     else if (item.id === 'resource-booking-system') ProjectIcon = CalendarDays;
-    else if (item.id === 'lib-mgmt-saas') ProjectIcon = LibraryBuildingIcon;
+    else if (item.id === 'lib-mgmt-saas') ProjectIcon = AILibraryIcon;
     else if (item.id === 'gesture-draw') ProjectIcon = Palette;
     else if (item.id === 'ctc-pizzeria') ProjectIcon = Pizza;
     

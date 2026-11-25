@@ -1,4 +1,5 @@
 import type { SVGProps } from 'react';
+import { createLucideIcon } from 'lucide-react';
 
 export function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -29,3 +30,14 @@ export function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/**
+ * AILibraryIcon:
+ * Official Lucide-style library books with a subtle AI sparkle detail.
+ */
+export const AILibraryIcon = createLucideIcon('AILibrary', [
+  ['rect', { width: '8', height: '18', x: '3', y: '3', rx: '1', key: 'b1' }],
+  ['path', { d: 'M7 3v18', key: 'b2' }],
+  ['path', { d: 'M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z', key: 'b3' }],
+  ['path', { d: 'm18.5 2.5-.7 1.8-1.8.7 1.8.7.7 1.8.7-1.8 1.8-.7-1.8-.7z', key: 'ai1' }]
+]);
